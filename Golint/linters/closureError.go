@@ -11,7 +11,7 @@ import (
 
 var ClosureErrAnalyzer = &analysis.Analyzer{
 	Name: "ClosureErrorAnalyzer",
-	Doc:  " Data race due to loop index variable capture",
+	Doc:  "Data race due to loop index variable capture",
 	Run:  run,
 	Requires: []*analysis.Analyzer{
 		inspect.Analyzer,
@@ -57,12 +57,18 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			}
 			stmtList := rangeStmt.Body.List
 			//寻找for的block直接调用的gostmt
+			//TODO:不能只在stmt中找gostmt，还是得递归遍历
 			for _, stmt := range stmtList {
 				gostmt, ok := stmt.(*ast.GoStmt)
 				if !ok {
 					continue
 				}
 				idVisitor.gostmt = gostmt
+				//var str string
+				//for key, _ := range idVisitor.objs {
+				//	str += (key.Name + " ")
+				//}
+				//report.Report(pass, rangeStmt, ": "+str)
 				//只遍历block部分
 				ast.Walk(idVisitor, gostmt.Call.Fun)
 			}
@@ -76,12 +82,18 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			}
 			stmtList := forStmt.Body.List
 			//寻找for的block直接调用的gostmt
+			//TODO:不能只在stmt中找gostmt，还是得递归遍历
 			for _, stmt := range stmtList {
 				gostmt, ok := stmt.(*ast.GoStmt)
 				if !ok {
 					continue
 				}
 				idVisitor.gostmt = gostmt
+				//var str string
+				//for key, _ := range idVisitor.objs {
+				//	str += (key.Name + " ")
+				//}
+				//report.Report(pass, forStmt, ": "+str)
 				//只遍历block部分
 				ast.Walk(idVisitor, gostmt.Call.Fun)
 			}
@@ -96,11 +108,15 @@ func run(pass *analysis.Pass) (interface{}, error) {
 // 收集for range循环中的每次更新的变量,for range中迭代赋值语句为AssignStmt，收集其左值
 func findVarsInRange(ident *ast.RangeStmt) map[*ast.Object]struct{} {
 	keys := make(map[*ast.Object]struct{})
-	obj, ok := ident.Key.(*ast.Ident)
+	key, ok := ident.Key.(*ast.Ident)
 	if !ok {
 		return keys
 	}
-	astmt, ok := obj.Obj.Decl.(*ast.AssignStmt)
+	obj := key.Obj
+	if obj == nil {
+		return keys
+	}
+	astmt, ok := obj.Decl.(*ast.AssignStmt)
 	if !ok {
 		return keys
 	}
@@ -125,22 +141,28 @@ func findVarsInFor(ident *ast.ForStmt) map[*ast.Object]struct{} {
 		if astmt, ok := ident.Init.(*ast.AssignStmt); ok {
 			for _, expr := range astmt.Lhs {
 				if id, ok := expr.(*ast.Ident); ok {
-					keys[id.Obj] = struct{}{}
+					if id.Obj != nil {
+						keys[id.Obj] = struct{}{}
+					}
 				}
 			}
 		}
 	}
-	//Cond部分
-	if ident.Cond != nil {
-		if binStmt, ok := ident.Cond.(*ast.BinaryExpr); ok {
-			if left, ok := binStmt.X.(*ast.Ident); ok {
-				keys[left.Obj] = struct{}{}
-			}
-			if right, ok := binStmt.Y.(*ast.Ident); ok {
-				keys[right.Obj] = struct{}{}
-			}
-		}
-	}
+	////Cond部分  暂时不要了，会误收集， i < loops,loops是一个定值，也会被记录
+	//if ident.Cond != nil {
+	//	if binStmt, ok := ident.Cond.(*ast.BinaryExpr); ok {
+	//		if left, ok := binStmt.X.(*ast.Ident); ok {
+	//			if left.Obj != nil {
+	//				keys[left.Obj] = struct{}{}
+	//			}
+	//		}
+	//		if right, ok := binStmt.Y.(*ast.Ident); ok {
+	//			if right.Obj != nil {
+	//				keys[right.Obj] = struct{}{}
+	//			}
+	//		}
+	//	}
+	//}
 	//Post部分
 	if ident.Post != nil {
 		switch ident.Post.(type) {
@@ -148,14 +170,18 @@ func findVarsInFor(ident *ast.ForStmt) map[*ast.Object]struct{} {
 			if astmt, ok := ident.Post.(*ast.AssignStmt); ok {
 				for _, expr := range astmt.Lhs {
 					if id, ok := expr.(*ast.Ident); ok {
-						keys[id.Obj] = struct{}{}
+						if id.Obj != nil {
+							keys[id.Obj] = struct{}{}
+						}
 					}
 				}
 			}
 		case *ast.IncDecStmt:
 			if idStmt, ok := ident.Post.(*ast.IncDecStmt); ok {
 				if x, ok := idStmt.X.(*ast.Ident); ok {
-					keys[x.Obj] = struct{}{}
+					if x.Obj != nil {
+						keys[x.Obj] = struct{}{}
+					}
 				}
 			}
 		}

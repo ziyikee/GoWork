@@ -54,7 +54,7 @@ Data Race：https://zhuanlan.zhihu.com/p/532060939
 
 对于循环中每次被更新的变量，在for循环体中如果存在gostmt，且该变量被gostmt引用，则会出现goroutine的延迟绑定，不同goroutine可能拿到的变量是相同的变量值
 
-![image-20230314150006328](C:\Users\yefengyuan\AppData\Roaming\Typora\typora-user-images\image-20230314150006328.png)
+![image-20230314150006328](img/image-20230314150006328.png)
 
 检测规则：
 
@@ -63,7 +63,7 @@ Data Race：https://zhuanlan.zhihu.com/p/532060939
 3. 确定for循环中是否存在gostmt
 4. 确定更新的变量是否在gostmt中被引用，且不是通过参数传参的形式进行引用的
 
-## pass_mutex_by_value 
+## pass_mutex_by_value
 
 https://github.com/trailofbits/semgrep-rules/blob/main/go/sync-mutex-value-copied.yaml
 
@@ -78,3 +78,153 @@ https://stackoverflow.com/questions/49808622/sync-mutex-and-sync-mutex-which-is-
 不要主动去检测参数是不是锁，是值还是引用，而是先去找锁使用的地方，再反过来去看是通过什么方式传递的。
 
 传递锁的方式有两种，一种通过函数形参传递，另一个中通过函数接收器传递，锁可能是接收器或者接收器的属性，此时需要判断接收器是值形式还是引用形式。
+
+## 开源扫描
+
+目前的规则：
+
+- WaitGroupAdd：Check if directly calling `$WG.add()` in anonymous goroutine
+- WaitGroupWaitInLoop：Calling `$WG.Wait()` inside a loop blocks the call to `$WG.Done()`
+- HangingGoroutine：Potential goroutine leak due to unbuffered channel send inside loop or unbuffered channel receive in select block
+- ClosureError：Data race due to loop index variable capture
+- PassMutexByValue：Pass or refer to a Mutex or a receiver containing a Mutex as a value type
+
+### Grpc-go
+
+![image-20230320170305404](img/image-20230320170305404.png)
+
+只扫出来两条，均为触发`HangGoroutine`规则，触发场景：
+
+```go
+//Ref：grpc-go-master/benchmark/worker/benchmark_client.go
+1. go func(idx int) {
+2. 	// TODO: do warm up if necessary.
+3. 	// Now relying on worker client to reserve time to do warm up.
+4. 	// The worker client needs to wait for some time after client is created,
+5. 	// before starting benchmark.
+6. 	done := make(chan bool)
+7. 	for {
+8. 		go func() {
+9. 			start := time.Now()
+10. 			if err := benchmark.DoUnaryCall(client, reqSize, respSize); err != nil {
+11. 				select {
+12. 				case <-bc.stop:
+13. 				case done <- false: //blocked
+14. 				}
+15. 				return
+16. 			}
+17. 			elapse := time.Since(start)
+18. 			bc.lockingHistograms[idx].add(int64(elapse))
+19. 			select {
+20. 			case <-bc.stop:
+21. 			case done <- true: //blocked
+22. 			}
+23. 		}()
+24. 		select {
+25. 		case <-bc.stop: //在此返回
+26. 			return
+27. 		case <-done: //不再接收消息
+28. 		}
+29. 	}
+30. }(idx)
+```
+
+### K8S
+
+![image-20230320172946015](img/image-20230320172946015.png)
+
+![image-20230320173816633](img/image-20230320173816633.png)
+
+k8s-client-go:
+
+大部分都是触发`HangingGoroutine`规则，触发的代码结构也基本相似，最后一个`PassMutexByValue`查看后属于FP，规则需要再细化
+
+![image-20230320193813405](img/image-20230320193813405.png)
+
+`HanglingGoroutine`:
+
+```go
+//Ref:kubernetes-master/pkg/kubelet/kubelet_node_status_test.go
+1. 	done := make(chan struct{})
+2. 	go func() {
+3. 		kubelet.registerWithAPIServer()
+4. 		done <- struct{}{} // may blocked
+5. 	}()
+6. 	select {
+7. 	case <-time.After(wait.ForeverTestTimeout): //在此退出
+8. 		assert.Fail(t, "timed out waiting for registration")
+9. 	case <-done:
+10. 		return
+11. }
+```
+
+```go
+//Ref: kubernetes-master/cmd/kubemark/app/hollow_node_test.go
+1. errCh := make(chan error)
+2. 			go func() {
+3. 				data, err := os.ReadFile(kubeconfigPath)
+4. 				t.Logf("read %d, err=%v\n", len(data), err)
+5. 				errCh <- run(s)
+6. 			}()
+7. 
+8. 			select {
+9. 			case err := <-errCh:
+10. 				t.Fatalf("Run finished unexpectedly with error: %v", err)
+11. 			case <-time.After(3 * time.Second):
+12. 				t.Logf("Morph %q hasn't crashed for 3s. Calling success.", morph)
+13. 			}
+```
+
+`ClosureError`:
+
+```go
+//Ref: kubernetes-master/pkg/util/async/runner.go
+1. // Start begins running.
+2. func (r *Runner) Start() {
+3. 	r.lock.Lock()
+4. 	defer r.lock.Unlock()
+5. 	if r.stop == nil {
+6. 		c := make(chan struct{})
+7. 		r.stop = &c
+8. 		for i := range r.loopFuncs {
+9. 			go r.loopFuncs[i](*r.stop)  //index i
+10. 		}
+11. 	}
+12. }
+
+// Runner is an abstraction to make it easy to start and stop groups of things that can be
+// described by a single function which waits on a channel close to exit.
+type Runner struct {
+	lock      sync.Mutex
+	loopFuncs []func(stop chan struct{})
+	stop      *chan struct{}
+}
+```
+
+### go-ethereum-master
+
+![image-20230320204602571](img/image-20230320204602571.png)
+
+依旧是`HangingGoroutine`类型的较多：
+
+存在误报，虽然符合规则，但是已经做了避免措施(发现学姐之前也扫出了这个。。)：
+
+![image-20230320204852760](img/image-20230320204852760.png)
+
+也有未做处理的：
+
+![image-20230320205200414](img/image-20230320205200414.png)
+
+`ClosureError`类型的存在疑问，更典型的场景应该是循环变量在函数体内被捕获到，但这里i作为临时变量，也存在被引用捕获的可能(**需要再深入了解一下go起goroutine的底层逻辑**)：
+
+![image-20230320210429604](img/image-20230320210429604.png)
+
+## 遇到的问题
+
+1. 对目标路径进行扫描时，会先对目标项目进行编译，在go build时可能报出undefined的错误，但是实际文件中并没有报错，可能是涉及到go 和 c的交叉编译：https://juejin.cn/post/7168747781388140580，https://blog.51cto.com/huashao/5197911
+
+   在Goland的启动配置的`Environment`中添加：`CGO_ENABLED=1;CC=x86_64-w64-mingw32-gcc;GOARCH=amd64;GOOS=windows;CGO_LDFLAGS="-static"`
+
+![image-20230320195436591](img/image-20230320195436591.png)
+
+![image-20230320175032531](img/image-20230320175032531.png)

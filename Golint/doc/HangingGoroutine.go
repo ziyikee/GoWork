@@ -4,7 +4,7 @@ func example() {
 	var ch1 = make(chan string)
 	ch2 := make(chan string, 1)
 	var ch3, ch5 = make(chan string), make(chan string, 0)
-	ch4 := make(chan string, 0)
+	ch4, ch6 := make(chan string, 0), make(chan string, 0)
 
 	go func() {
 		str := "aaa"
@@ -13,6 +13,7 @@ func example() {
 		ch3 <- str
 		ch4 <- str
 		ch5 <- str
+		ch6 <- str
 	}()
 	a := 1
 	select {

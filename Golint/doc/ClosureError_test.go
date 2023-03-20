@@ -10,9 +10,11 @@ var values = []int{1, 2, 3, 4, 5}
 
 func Test(t *testing.T) {
 	for _, value := range values {
-		go func() {
-			fmt.Printf("value = %d\n", value)
-		}()
+		if true {
+			go func() {
+				fmt.Printf("value = %d\n", value)
+			}()
+		}
 	}
 
 	time.Sleep(1 * time.Second)

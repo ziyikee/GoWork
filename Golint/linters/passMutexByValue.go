@@ -11,7 +11,7 @@ import (
 
 var PassMutexByValueAnalyzer = &analysis.Analyzer{
 	Name: "PassMutexByValueAnalyzer",
-	Doc:  " ",
+	Doc:  "Pass or refer to a Mutex or a receiver containing a Mutex as a value type",
 	Requires: []*analysis.Analyzer{
 		inspect.Analyzer,
 		generated.Analyzer,
@@ -47,11 +47,13 @@ func passMutexByValueRun(pass *analysis.Pass) (interface{}, error) {
 
 			if ident, ok := selExpr.X.(*ast.SelectorExpr); ok {
 				if id, ok := ident.X.(*ast.Ident); ok {
-					if filed, ok := id.Obj.Decl.(*ast.Field); ok { //排除在函数体内声明的mutex
-						if expr, ok := filed.Type.(*ast.StarExpr); !ok && expr == nil {
-							//fmt.Println("variable: " + ident.Obj.Name + " op: " + selExpr.Sel.Name)
-							//report针对同一个ident自动去重了，不用担心lock和unlock会报告两次
-							report.Report(pass, id.Obj, "Mutex variable: "+id.Obj.Name+" may be passed by value.")
+					if obj := id.Obj; obj != nil {
+						if filed, ok := obj.Decl.(*ast.Field); ok { //排除在函数体内声明的mutex
+							if expr, ok := filed.Type.(*ast.StarExpr); !ok && expr == nil {
+								//fmt.Println("variable: " + ident.Obj.Name + " op: " + selExpr.Sel.Name)
+								//report针对同一个ident自动去重了，不用担心lock和unlock会报告两次
+								report.Report(pass, id.Obj, "Mutex variable: "+id.Obj.Name+" may be passed by value.")
+							}
 						}
 					}
 				}
