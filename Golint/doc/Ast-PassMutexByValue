@@ -1,0 +1,770 @@
+=== RUN   Test
+     0  *ast.File {
+     1  .  Package: D:\Projects\GoLint\doc\PassMutexByValue.go:1:1
+     2  .  Name: *ast.Ident {
+     3  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:1:9
+     4  .  .  Name: "doc"
+     5  .  }
+     6  .  Decls: []ast.Decl (len = 8) {
+     7  .  .  0: *ast.GenDecl {
+     8  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:3:1
+     9  .  .  .  Tok: import
+    10  .  .  .  Lparen: -
+    11  .  .  .  Specs: []ast.Spec (len = 1) {
+    12  .  .  .  .  0: *ast.ImportSpec {
+    13  .  .  .  .  .  Path: *ast.BasicLit {
+    14  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\PassMutexByValue.go:3:8
+    15  .  .  .  .  .  .  Kind: STRING
+    16  .  .  .  .  .  .  Value: "\"sync\""
+    17  .  .  .  .  .  }
+    18  .  .  .  .  .  EndPos: -
+    19  .  .  .  .  }
+    20  .  .  .  }
+    21  .  .  .  Rparen: -
+    22  .  .  }
+    23  .  .  1: *ast.GenDecl {
+    24  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:5:1
+    25  .  .  .  Tok: type
+    26  .  .  .  Lparen: -
+    27  .  .  .  Specs: []ast.Spec (len = 1) {
+    28  .  .  .  .  0: *ast.TypeSpec {
+    29  .  .  .  .  .  Name: *ast.Ident {
+    30  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:5:6
+    31  .  .  .  .  .  .  Name: "Holder"
+    32  .  .  .  .  .  .  Obj: *ast.Object {
+    33  .  .  .  .  .  .  .  Kind: type
+    34  .  .  .  .  .  .  .  Name: "Holder"
+    35  .  .  .  .  .  .  .  Decl: *(obj @ 28)
+    36  .  .  .  .  .  .  }
+    37  .  .  .  .  .  }
+    38  .  .  .  .  .  Assign: -
+    39  .  .  .  .  .  Type: *ast.StructType {
+    40  .  .  .  .  .  .  Struct: D:\Projects\GoLint\doc\PassMutexByValue.go:5:13
+    41  .  .  .  .  .  .  Fields: *ast.FieldList {
+    42  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:5:20
+    43  .  .  .  .  .  .  .  List: []*ast.Field (len = 3) {
+    44  .  .  .  .  .  .  .  .  0: *ast.Field {
+    45  .  .  .  .  .  .  .  .  .  Type: *ast.SelectorExpr {
+    46  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:6:2
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "sync"
+    49  .  .  .  .  .  .  .  .  .  .  }
+    50  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+    51  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:6:7
+    52  .  .  .  .  .  .  .  .  .  .  .  Name: "Mutex"
+    53  .  .  .  .  .  .  .  .  .  .  }
+    54  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  1: *ast.Field {
+    57  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    58  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    59  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:7:2
+    60  .  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+    61  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+    64  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 56)
+    65  .  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  }
+    67  .  .  .  .  .  .  .  .  .  }
+    68  .  .  .  .  .  .  .  .  .  Type: *ast.SelectorExpr {
+    69  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+    70  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:7:9
+    71  .  .  .  .  .  .  .  .  .  .  .  Name: "sync"
+    72  .  .  .  .  .  .  .  .  .  .  }
+    73  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+    74  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:7:14
+    75  .  .  .  .  .  .  .  .  .  .  .  Name: "Mutex"
+    76  .  .  .  .  .  .  .  .  .  .  }
+    77  .  .  .  .  .  .  .  .  .  }
+    78  .  .  .  .  .  .  .  .  }
+    79  .  .  .  .  .  .  .  .  2: *ast.Field {
+    80  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    81  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    82  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:8:2
+    83  .  .  .  .  .  .  .  .  .  .  .  Name: "count"
+    84  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    85  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    86  .  .  .  .  .  .  .  .  .  .  .  .  Name: "count"
+    87  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 79)
+    88  .  .  .  .  .  .  .  .  .  .  .  }
+    89  .  .  .  .  .  .  .  .  .  .  }
+    90  .  .  .  .  .  .  .  .  .  }
+    91  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+    92  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:8:9
+    93  .  .  .  .  .  .  .  .  .  .  Name: "int"
+    94  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:9:1
+    98  .  .  .  .  .  .  }
+    99  .  .  .  .  .  .  Incomplete: false
+   100  .  .  .  .  .  }
+   101  .  .  .  .  }
+   102  .  .  .  }
+   103  .  .  .  Rparen: -
+   104  .  .  }
+   105  .  .  2: *ast.FuncDecl {
+   106  .  .  .  Recv: *ast.FieldList {
+   107  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:11:6
+   108  .  .  .  .  List: []*ast.Field (len = 1) {
+   109  .  .  .  .  .  0: *ast.Field {
+   110  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   111  .  .  .  .  .  .  .  0: *ast.Ident {
+   112  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:11:7
+   113  .  .  .  .  .  .  .  .  Name: "h"
+   114  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   115  .  .  .  .  .  .  .  .  .  Kind: var
+   116  .  .  .  .  .  .  .  .  .  Name: "h"
+   117  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 109)
+   118  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  }
+   120  .  .  .  .  .  .  }
+   121  .  .  .  .  .  .  Type: *ast.Ident {
+   122  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:11:9
+   123  .  .  .  .  .  .  .  Name: "Holder"
+   124  .  .  .  .  .  .  .  Obj: *(obj @ 32)
+   125  .  .  .  .  .  .  }
+   126  .  .  .  .  .  }
+   127  .  .  .  .  }
+   128  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:11:15
+   129  .  .  .  }
+   130  .  .  .  Name: *ast.Ident {
+   131  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:11:17
+   132  .  .  .  .  Name: "func1"
+   133  .  .  .  }
+   134  .  .  .  Type: *ast.FuncType {
+   135  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:11:1
+   136  .  .  .  .  Params: *ast.FieldList {
+   137  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:11:22
+   138  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:11:23
+   139  .  .  .  .  }
+   140  .  .  .  }
+   141  .  .  .  Body: *ast.BlockStmt {
+   142  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:11:25
+   143  .  .  .  .  List: []ast.Stmt (len = 3) {
+   144  .  .  .  .  .  0: *ast.ExprStmt {
+   145  .  .  .  .  .  .  X: *ast.CallExpr {
+   146  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   147  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   148  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:12:2
+   149  .  .  .  .  .  .  .  .  .  Name: "h"
+   150  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 114)
+   151  .  .  .  .  .  .  .  .  }
+   152  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   153  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:12:4
+   154  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   155  .  .  .  .  .  .  .  .  }
+   156  .  .  .  .  .  .  .  }
+   157  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:12:8
+   158  .  .  .  .  .  .  .  Ellipsis: -
+   159  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:12:9
+   160  .  .  .  .  .  .  }
+   161  .  .  .  .  .  }
+   162  .  .  .  .  .  1: *ast.IncDecStmt {
+   163  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   164  .  .  .  .  .  .  .  X: *ast.Ident {
+   165  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:13:2
+   166  .  .  .  .  .  .  .  .  Name: "h"
+   167  .  .  .  .  .  .  .  .  Obj: *(obj @ 114)
+   168  .  .  .  .  .  .  .  }
+   169  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   170  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:13:4
+   171  .  .  .  .  .  .  .  .  Name: "count"
+   172  .  .  .  .  .  .  .  }
+   173  .  .  .  .  .  .  }
+   174  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:13:9
+   175  .  .  .  .  .  .  Tok: ++
+   176  .  .  .  .  .  }
+   177  .  .  .  .  .  2: *ast.ExprStmt {
+   178  .  .  .  .  .  .  X: *ast.CallExpr {
+   179  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   180  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   181  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:14:2
+   182  .  .  .  .  .  .  .  .  .  Name: "h"
+   183  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 114)
+   184  .  .  .  .  .  .  .  .  }
+   185  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   186  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:14:4
+   187  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   188  .  .  .  .  .  .  .  .  }
+   189  .  .  .  .  .  .  .  }
+   190  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:14:10
+   191  .  .  .  .  .  .  .  Ellipsis: -
+   192  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:14:11
+   193  .  .  .  .  .  .  }
+   194  .  .  .  .  .  }
+   195  .  .  .  .  }
+   196  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:15:1
+   197  .  .  .  }
+   198  .  .  }
+   199  .  .  3: *ast.FuncDecl {
+   200  .  .  .  Recv: *ast.FieldList {
+   201  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:17:6
+   202  .  .  .  .  List: []*ast.Field (len = 1) {
+   203  .  .  .  .  .  0: *ast.Field {
+   204  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   205  .  .  .  .  .  .  .  0: *ast.Ident {
+   206  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:17:7
+   207  .  .  .  .  .  .  .  .  Name: "h"
+   208  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   209  .  .  .  .  .  .  .  .  .  Kind: var
+   210  .  .  .  .  .  .  .  .  .  Name: "h"
+   211  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 203)
+   212  .  .  .  .  .  .  .  .  }
+   213  .  .  .  .  .  .  .  }
+   214  .  .  .  .  .  .  }
+   215  .  .  .  .  .  .  Type: *ast.StarExpr {
+   216  .  .  .  .  .  .  .  Star: D:\Projects\GoLint\doc\PassMutexByValue.go:17:9
+   217  .  .  .  .  .  .  .  X: *ast.Ident {
+   218  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:17:10
+   219  .  .  .  .  .  .  .  .  Name: "Holder"
+   220  .  .  .  .  .  .  .  .  Obj: *(obj @ 32)
+   221  .  .  .  .  .  .  .  }
+   222  .  .  .  .  .  .  }
+   223  .  .  .  .  .  }
+   224  .  .  .  .  }
+   225  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:17:16
+   226  .  .  .  }
+   227  .  .  .  Name: *ast.Ident {
+   228  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:17:18
+   229  .  .  .  .  Name: "func2"
+   230  .  .  .  }
+   231  .  .  .  Type: *ast.FuncType {
+   232  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:17:1
+   233  .  .  .  .  Params: *ast.FieldList {
+   234  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:17:23
+   235  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:17:24
+   236  .  .  .  .  }
+   237  .  .  .  }
+   238  .  .  .  Body: *ast.BlockStmt {
+   239  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:17:26
+   240  .  .  .  .  List: []ast.Stmt (len = 3) {
+   241  .  .  .  .  .  0: *ast.ExprStmt {
+   242  .  .  .  .  .  .  X: *ast.CallExpr {
+   243  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   244  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   245  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:18:2
+   246  .  .  .  .  .  .  .  .  .  Name: "h"
+   247  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 208)
+   248  .  .  .  .  .  .  .  .  }
+   249  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   250  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:18:4
+   251  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   252  .  .  .  .  .  .  .  .  }
+   253  .  .  .  .  .  .  .  }
+   254  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:18:8
+   255  .  .  .  .  .  .  .  Ellipsis: -
+   256  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:18:9
+   257  .  .  .  .  .  .  }
+   258  .  .  .  .  .  }
+   259  .  .  .  .  .  1: *ast.IncDecStmt {
+   260  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   261  .  .  .  .  .  .  .  X: *ast.Ident {
+   262  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:19:2
+   263  .  .  .  .  .  .  .  .  Name: "h"
+   264  .  .  .  .  .  .  .  .  Obj: *(obj @ 208)
+   265  .  .  .  .  .  .  .  }
+   266  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   267  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:19:4
+   268  .  .  .  .  .  .  .  .  Name: "count"
+   269  .  .  .  .  .  .  .  }
+   270  .  .  .  .  .  .  }
+   271  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:19:9
+   272  .  .  .  .  .  .  Tok: ++
+   273  .  .  .  .  .  }
+   274  .  .  .  .  .  2: *ast.ExprStmt {
+   275  .  .  .  .  .  .  X: *ast.CallExpr {
+   276  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   277  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   278  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:20:2
+   279  .  .  .  .  .  .  .  .  .  Name: "h"
+   280  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 208)
+   281  .  .  .  .  .  .  .  .  }
+   282  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   283  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:20:4
+   284  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   285  .  .  .  .  .  .  .  .  }
+   286  .  .  .  .  .  .  .  }
+   287  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:20:10
+   288  .  .  .  .  .  .  .  Ellipsis: -
+   289  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:20:11
+   290  .  .  .  .  .  .  }
+   291  .  .  .  .  .  }
+   292  .  .  .  .  }
+   293  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:21:1
+   294  .  .  .  }
+   295  .  .  }
+   296  .  .  4: *ast.FuncDecl {
+   297  .  .  .  Recv: *ast.FieldList {
+   298  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:23:6
+   299  .  .  .  .  List: []*ast.Field (len = 1) {
+   300  .  .  .  .  .  0: *ast.Field {
+   301  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   302  .  .  .  .  .  .  .  0: *ast.Ident {
+   303  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:23:7
+   304  .  .  .  .  .  .  .  .  Name: "h"
+   305  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   306  .  .  .  .  .  .  .  .  .  Kind: var
+   307  .  .  .  .  .  .  .  .  .  Name: "h"
+   308  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 300)
+   309  .  .  .  .  .  .  .  .  }
+   310  .  .  .  .  .  .  .  }
+   311  .  .  .  .  .  .  }
+   312  .  .  .  .  .  .  Type: *ast.Ident {
+   313  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:23:9
+   314  .  .  .  .  .  .  .  Name: "Holder"
+   315  .  .  .  .  .  .  .  Obj: *(obj @ 32)
+   316  .  .  .  .  .  .  }
+   317  .  .  .  .  .  }
+   318  .  .  .  .  }
+   319  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:23:15
+   320  .  .  .  }
+   321  .  .  .  Name: *ast.Ident {
+   322  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:23:17
+   323  .  .  .  .  Name: "func3"
+   324  .  .  .  }
+   325  .  .  .  Type: *ast.FuncType {
+   326  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:23:1
+   327  .  .  .  .  Params: *ast.FieldList {
+   328  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:23:22
+   329  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:23:23
+   330  .  .  .  .  }
+   331  .  .  .  }
+   332  .  .  .  Body: *ast.BlockStmt {
+   333  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:23:25
+   334  .  .  .  .  List: []ast.Stmt (len = 3) {
+   335  .  .  .  .  .  0: *ast.ExprStmt {
+   336  .  .  .  .  .  .  X: *ast.CallExpr {
+   337  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   338  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   339  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   340  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:24:2
+   341  .  .  .  .  .  .  .  .  .  .  Name: "h"
+   342  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 305)
+   343  .  .  .  .  .  .  .  .  .  }
+   344  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   345  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:24:4
+   346  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+   347  .  .  .  .  .  .  .  .  .  }
+   348  .  .  .  .  .  .  .  .  }
+   349  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   350  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:24:11
+   351  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   352  .  .  .  .  .  .  .  .  }
+   353  .  .  .  .  .  .  .  }
+   354  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:24:15
+   355  .  .  .  .  .  .  .  Ellipsis: -
+   356  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:24:16
+   357  .  .  .  .  .  .  }
+   358  .  .  .  .  .  }
+   359  .  .  .  .  .  1: *ast.IncDecStmt {
+   360  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   361  .  .  .  .  .  .  .  X: *ast.Ident {
+   362  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:25:2
+   363  .  .  .  .  .  .  .  .  Name: "h"
+   364  .  .  .  .  .  .  .  .  Obj: *(obj @ 305)
+   365  .  .  .  .  .  .  .  }
+   366  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   367  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:25:4
+   368  .  .  .  .  .  .  .  .  Name: "count"
+   369  .  .  .  .  .  .  .  }
+   370  .  .  .  .  .  .  }
+   371  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:25:9
+   372  .  .  .  .  .  .  Tok: ++
+   373  .  .  .  .  .  }
+   374  .  .  .  .  .  2: *ast.ExprStmt {
+   375  .  .  .  .  .  .  X: *ast.CallExpr {
+   376  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   377  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   378  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   379  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:26:2
+   380  .  .  .  .  .  .  .  .  .  .  Name: "h"
+   381  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 305)
+   382  .  .  .  .  .  .  .  .  .  }
+   383  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   384  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:26:4
+   385  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+   386  .  .  .  .  .  .  .  .  .  }
+   387  .  .  .  .  .  .  .  .  }
+   388  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   389  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:26:11
+   390  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   391  .  .  .  .  .  .  .  .  }
+   392  .  .  .  .  .  .  .  }
+   393  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:26:17
+   394  .  .  .  .  .  .  .  Ellipsis: -
+   395  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:26:18
+   396  .  .  .  .  .  .  }
+   397  .  .  .  .  .  }
+   398  .  .  .  .  }
+   399  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:27:1
+   400  .  .  .  }
+   401  .  .  }
+   402  .  .  5: *ast.FuncDecl {
+   403  .  .  .  Recv: *ast.FieldList {
+   404  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:29:6
+   405  .  .  .  .  List: []*ast.Field (len = 1) {
+   406  .  .  .  .  .  0: *ast.Field {
+   407  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   408  .  .  .  .  .  .  .  0: *ast.Ident {
+   409  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:29:7
+   410  .  .  .  .  .  .  .  .  Name: "h"
+   411  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   412  .  .  .  .  .  .  .  .  .  Kind: var
+   413  .  .  .  .  .  .  .  .  .  Name: "h"
+   414  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 406)
+   415  .  .  .  .  .  .  .  .  }
+   416  .  .  .  .  .  .  .  }
+   417  .  .  .  .  .  .  }
+   418  .  .  .  .  .  .  Type: *ast.StarExpr {
+   419  .  .  .  .  .  .  .  Star: D:\Projects\GoLint\doc\PassMutexByValue.go:29:9
+   420  .  .  .  .  .  .  .  X: *ast.Ident {
+   421  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:29:10
+   422  .  .  .  .  .  .  .  .  Name: "Holder"
+   423  .  .  .  .  .  .  .  .  Obj: *(obj @ 32)
+   424  .  .  .  .  .  .  .  }
+   425  .  .  .  .  .  .  }
+   426  .  .  .  .  .  }
+   427  .  .  .  .  }
+   428  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:29:16
+   429  .  .  .  }
+   430  .  .  .  Name: *ast.Ident {
+   431  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:29:18
+   432  .  .  .  .  Name: "func4"
+   433  .  .  .  }
+   434  .  .  .  Type: *ast.FuncType {
+   435  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:29:1
+   436  .  .  .  .  Params: *ast.FieldList {
+   437  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:29:23
+   438  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:29:24
+   439  .  .  .  .  }
+   440  .  .  .  }
+   441  .  .  .  Body: *ast.BlockStmt {
+   442  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:29:26
+   443  .  .  .  .  List: []ast.Stmt (len = 3) {
+   444  .  .  .  .  .  0: *ast.ExprStmt {
+   445  .  .  .  .  .  .  X: *ast.CallExpr {
+   446  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   447  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   448  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   449  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:30:2
+   450  .  .  .  .  .  .  .  .  .  .  Name: "h"
+   451  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 411)
+   452  .  .  .  .  .  .  .  .  .  }
+   453  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   454  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:30:4
+   455  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+   456  .  .  .  .  .  .  .  .  .  }
+   457  .  .  .  .  .  .  .  .  }
+   458  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   459  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:30:11
+   460  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   461  .  .  .  .  .  .  .  .  }
+   462  .  .  .  .  .  .  .  }
+   463  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:30:15
+   464  .  .  .  .  .  .  .  Ellipsis: -
+   465  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:30:16
+   466  .  .  .  .  .  .  }
+   467  .  .  .  .  .  }
+   468  .  .  .  .  .  1: *ast.IncDecStmt {
+   469  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   470  .  .  .  .  .  .  .  X: *ast.Ident {
+   471  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:31:2
+   472  .  .  .  .  .  .  .  .  Name: "h"
+   473  .  .  .  .  .  .  .  .  Obj: *(obj @ 411)
+   474  .  .  .  .  .  .  .  }
+   475  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   476  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:31:4
+   477  .  .  .  .  .  .  .  .  Name: "count"
+   478  .  .  .  .  .  .  .  }
+   479  .  .  .  .  .  .  }
+   480  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:31:9
+   481  .  .  .  .  .  .  Tok: ++
+   482  .  .  .  .  .  }
+   483  .  .  .  .  .  2: *ast.ExprStmt {
+   484  .  .  .  .  .  .  X: *ast.CallExpr {
+   485  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   486  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   487  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   488  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:32:2
+   489  .  .  .  .  .  .  .  .  .  .  Name: "h"
+   490  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 411)
+   491  .  .  .  .  .  .  .  .  .  }
+   492  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   493  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:32:4
+   494  .  .  .  .  .  .  .  .  .  .  Name: "mutex2"
+   495  .  .  .  .  .  .  .  .  .  }
+   496  .  .  .  .  .  .  .  .  }
+   497  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   498  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:32:11
+   499  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   500  .  .  .  .  .  .  .  .  }
+   501  .  .  .  .  .  .  .  }
+   502  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:32:17
+   503  .  .  .  .  .  .  .  Ellipsis: -
+   504  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:32:18
+   505  .  .  .  .  .  .  }
+   506  .  .  .  .  .  }
+   507  .  .  .  .  }
+   508  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:33:1
+   509  .  .  .  }
+   510  .  .  }
+   511  .  .  6: *ast.FuncDecl {
+   512  .  .  .  Name: *ast.Ident {
+   513  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:35:6
+   514  .  .  .  .  Name: "func5"
+   515  .  .  .  .  Obj: *ast.Object {
+   516  .  .  .  .  .  Kind: func
+   517  .  .  .  .  .  Name: "func5"
+   518  .  .  .  .  .  Decl: *(obj @ 511)
+   519  .  .  .  .  }
+   520  .  .  .  }
+   521  .  .  .  Type: *ast.FuncType {
+   522  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:35:1
+   523  .  .  .  .  Params: *ast.FieldList {
+   524  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:35:11
+   525  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   526  .  .  .  .  .  .  0: *ast.Field {
+   527  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   528  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   529  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:35:12
+   530  .  .  .  .  .  .  .  .  .  Name: "mutex5"
+   531  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   532  .  .  .  .  .  .  .  .  .  .  Kind: var
+   533  .  .  .  .  .  .  .  .  .  .  Name: "mutex5"
+   534  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 526)
+   535  .  .  .  .  .  .  .  .  .  }
+   536  .  .  .  .  .  .  .  .  }
+   537  .  .  .  .  .  .  .  }
+   538  .  .  .  .  .  .  .  Type: *ast.SelectorExpr {
+   539  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   540  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:35:19
+   541  .  .  .  .  .  .  .  .  .  Name: "sync"
+   542  .  .  .  .  .  .  .  .  }
+   543  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   544  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:35:24
+   545  .  .  .  .  .  .  .  .  .  Name: "Mutex"
+   546  .  .  .  .  .  .  .  .  }
+   547  .  .  .  .  .  .  .  }
+   548  .  .  .  .  .  .  }
+   549  .  .  .  .  .  }
+   550  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:35:29
+   551  .  .  .  .  }
+   552  .  .  .  }
+   553  .  .  .  Body: *ast.BlockStmt {
+   554  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:35:31
+   555  .  .  .  .  List: []ast.Stmt (len = 4) {
+   556  .  .  .  .  .  0: *ast.AssignStmt {
+   557  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
+   558  .  .  .  .  .  .  .  0: *ast.Ident {
+   559  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:36:2
+   560  .  .  .  .  .  .  .  .  Name: "i"
+   561  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   562  .  .  .  .  .  .  .  .  .  Kind: var
+   563  .  .  .  .  .  .  .  .  .  Name: "i"
+   564  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 556)
+   565  .  .  .  .  .  .  .  .  }
+   566  .  .  .  .  .  .  .  }
+   567  .  .  .  .  .  .  }
+   568  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:36:4
+   569  .  .  .  .  .  .  Tok: :=
+   570  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   571  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   572  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\PassMutexByValue.go:36:7
+   573  .  .  .  .  .  .  .  .  Kind: INT
+   574  .  .  .  .  .  .  .  .  Value: "0"
+   575  .  .  .  .  .  .  .  }
+   576  .  .  .  .  .  .  }
+   577  .  .  .  .  .  }
+   578  .  .  .  .  .  1: *ast.ExprStmt {
+   579  .  .  .  .  .  .  X: *ast.CallExpr {
+   580  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   581  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   582  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:37:2
+   583  .  .  .  .  .  .  .  .  .  Name: "mutex5"
+   584  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 531)
+   585  .  .  .  .  .  .  .  .  }
+   586  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   587  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:37:9
+   588  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   589  .  .  .  .  .  .  .  .  }
+   590  .  .  .  .  .  .  .  }
+   591  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:37:13
+   592  .  .  .  .  .  .  .  Ellipsis: -
+   593  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:37:14
+   594  .  .  .  .  .  .  }
+   595  .  .  .  .  .  }
+   596  .  .  .  .  .  2: *ast.IncDecStmt {
+   597  .  .  .  .  .  .  X: *ast.Ident {
+   598  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:38:2
+   599  .  .  .  .  .  .  .  Name: "i"
+   600  .  .  .  .  .  .  .  Obj: *(obj @ 561)
+   601  .  .  .  .  .  .  }
+   602  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:38:3
+   603  .  .  .  .  .  .  Tok: ++
+   604  .  .  .  .  .  }
+   605  .  .  .  .  .  3: *ast.ExprStmt {
+   606  .  .  .  .  .  .  X: *ast.CallExpr {
+   607  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   608  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   609  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:39:2
+   610  .  .  .  .  .  .  .  .  .  Name: "mutex5"
+   611  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 531)
+   612  .  .  .  .  .  .  .  .  }
+   613  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   614  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:39:9
+   615  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   616  .  .  .  .  .  .  .  .  }
+   617  .  .  .  .  .  .  .  }
+   618  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:39:15
+   619  .  .  .  .  .  .  .  Ellipsis: -
+   620  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:39:16
+   621  .  .  .  .  .  .  }
+   622  .  .  .  .  .  }
+   623  .  .  .  .  }
+   624  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:40:1
+   625  .  .  .  }
+   626  .  .  }
+   627  .  .  7: *ast.FuncDecl {
+   628  .  .  .  Name: *ast.Ident {
+   629  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:42:6
+   630  .  .  .  .  Name: "func6"
+   631  .  .  .  .  Obj: *ast.Object {
+   632  .  .  .  .  .  Kind: func
+   633  .  .  .  .  .  Name: "func6"
+   634  .  .  .  .  .  Decl: *(obj @ 627)
+   635  .  .  .  .  }
+   636  .  .  .  }
+   637  .  .  .  Type: *ast.FuncType {
+   638  .  .  .  .  Func: D:\Projects\GoLint\doc\PassMutexByValue.go:42:1
+   639  .  .  .  .  Params: *ast.FieldList {
+   640  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\PassMutexByValue.go:42:11
+   641  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   642  .  .  .  .  .  .  0: *ast.Field {
+   643  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   644  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   645  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:42:12
+   646  .  .  .  .  .  .  .  .  .  Name: "mutex6"
+   647  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   648  .  .  .  .  .  .  .  .  .  .  Kind: var
+   649  .  .  .  .  .  .  .  .  .  .  Name: "mutex6"
+   650  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 642)
+   651  .  .  .  .  .  .  .  .  .  }
+   652  .  .  .  .  .  .  .  .  }
+   653  .  .  .  .  .  .  .  }
+   654  .  .  .  .  .  .  .  Type: *ast.StarExpr {
+   655  .  .  .  .  .  .  .  .  Star: D:\Projects\GoLint\doc\PassMutexByValue.go:42:19
+   656  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   657  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   658  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:42:20
+   659  .  .  .  .  .  .  .  .  .  .  Name: "sync"
+   660  .  .  .  .  .  .  .  .  .  }
+   661  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   662  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:42:25
+   663  .  .  .  .  .  .  .  .  .  .  Name: "Mutex"
+   664  .  .  .  .  .  .  .  .  .  }
+   665  .  .  .  .  .  .  .  .  }
+   666  .  .  .  .  .  .  .  }
+   667  .  .  .  .  .  .  }
+   668  .  .  .  .  .  }
+   669  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\PassMutexByValue.go:42:30
+   670  .  .  .  .  }
+   671  .  .  .  }
+   672  .  .  .  Body: *ast.BlockStmt {
+   673  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:42:32
+   674  .  .  .  .  List: []ast.Stmt (len = 4) {
+   675  .  .  .  .  .  0: *ast.AssignStmt {
+   676  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
+   677  .  .  .  .  .  .  .  0: *ast.Ident {
+   678  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:43:2
+   679  .  .  .  .  .  .  .  .  Name: "i"
+   680  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   681  .  .  .  .  .  .  .  .  .  Kind: var
+   682  .  .  .  .  .  .  .  .  .  Name: "i"
+   683  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 675)
+   684  .  .  .  .  .  .  .  .  }
+   685  .  .  .  .  .  .  .  }
+   686  .  .  .  .  .  .  }
+   687  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:43:4
+   688  .  .  .  .  .  .  Tok: :=
+   689  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   690  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   691  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\PassMutexByValue.go:43:7
+   692  .  .  .  .  .  .  .  .  Kind: INT
+   693  .  .  .  .  .  .  .  .  Value: "0"
+   694  .  .  .  .  .  .  .  }
+   695  .  .  .  .  .  .  }
+   696  .  .  .  .  .  }
+   697  .  .  .  .  .  1: *ast.ExprStmt {
+   698  .  .  .  .  .  .  X: *ast.CallExpr {
+   699  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   700  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   701  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:44:2
+   702  .  .  .  .  .  .  .  .  .  Name: "mutex6"
+   703  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 647)
+   704  .  .  .  .  .  .  .  .  }
+   705  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   706  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:44:9
+   707  .  .  .  .  .  .  .  .  .  Name: "Lock"
+   708  .  .  .  .  .  .  .  .  }
+   709  .  .  .  .  .  .  .  }
+   710  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:44:13
+   711  .  .  .  .  .  .  .  Ellipsis: -
+   712  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:44:14
+   713  .  .  .  .  .  .  }
+   714  .  .  .  .  .  }
+   715  .  .  .  .  .  2: *ast.IncDecStmt {
+   716  .  .  .  .  .  .  X: *ast.Ident {
+   717  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:45:2
+   718  .  .  .  .  .  .  .  Name: "i"
+   719  .  .  .  .  .  .  .  Obj: *(obj @ 680)
+   720  .  .  .  .  .  .  }
+   721  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\PassMutexByValue.go:45:3
+   722  .  .  .  .  .  .  Tok: ++
+   723  .  .  .  .  .  }
+   724  .  .  .  .  .  3: *ast.ExprStmt {
+   725  .  .  .  .  .  .  X: *ast.CallExpr {
+   726  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   727  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   728  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:46:2
+   729  .  .  .  .  .  .  .  .  .  Name: "mutex6"
+   730  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 647)
+   731  .  .  .  .  .  .  .  .  }
+   732  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   733  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\PassMutexByValue.go:46:9
+   734  .  .  .  .  .  .  .  .  .  Name: "Unlock"
+   735  .  .  .  .  .  .  .  .  }
+   736  .  .  .  .  .  .  .  }
+   737  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\PassMutexByValue.go:46:15
+   738  .  .  .  .  .  .  .  Ellipsis: -
+   739  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\PassMutexByValue.go:46:16
+   740  .  .  .  .  .  .  }
+   741  .  .  .  .  .  }
+   742  .  .  .  .  }
+   743  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\PassMutexByValue.go:47:1
+   744  .  .  .  }
+   745  .  .  }
+   746  .  }
+   747  .  FileStart: D:\Projects\GoLint\doc\PassMutexByValue.go:1:1
+   748  .  FileEnd: D:\Projects\GoLint\doc\PassMutexByValue.go:47:3
+   749  .  Scope: *ast.Scope {
+   750  .  .  Objects: map[string]*ast.Object (len = 3) {
+   751  .  .  .  "Holder": *(obj @ 32)
+   752  .  .  .  "func5": *(obj @ 515)
+   753  .  .  .  "func6": *(obj @ 631)
+   754  .  .  }
+   755  .  }
+   756  .  Imports: []*ast.ImportSpec (len = 1) {
+   757  .  .  0: *(obj @ 12)
+   758  .  }
+   759  .  Unresolved: []*ast.Ident (len = 5) {
+   760  .  .  0: *(obj @ 46)
+   761  .  .  1: *(obj @ 69)
+   762  .  .  2: *(obj @ 91)
+   763  .  .  3: *(obj @ 539)
+   764  .  .  4: *(obj @ 657)
+   765  .  }
+   766  }
+--- PASS: Test (0.05s)
+PASS

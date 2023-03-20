@@ -1,0 +1,1179 @@
+=== RUN   Test
+     0  *ast.File {
+     1  .  Package: D:\Projects\GoLint\doc\ClosureError_test.go:1:1
+     2  .  Name: *ast.Ident {
+     3  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:1:9
+     4  .  .  Name: "doc"
+     5  .  }
+     6  .  Decls: []ast.Decl (len = 3) {
+     7  .  .  0: *ast.GenDecl {
+     8  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:3:1
+     9  .  .  .  Tok: import
+    10  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:3:8
+    11  .  .  .  Specs: []ast.Spec (len = 3) {
+    12  .  .  .  .  0: *ast.ImportSpec {
+    13  .  .  .  .  .  Path: *ast.BasicLit {
+    14  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:4:2
+    15  .  .  .  .  .  .  Kind: STRING
+    16  .  .  .  .  .  .  Value: "\"fmt\""
+    17  .  .  .  .  .  }
+    18  .  .  .  .  .  EndPos: -
+    19  .  .  .  .  }
+    20  .  .  .  .  1: *ast.ImportSpec {
+    21  .  .  .  .  .  Path: *ast.BasicLit {
+    22  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:5:2
+    23  .  .  .  .  .  .  Kind: STRING
+    24  .  .  .  .  .  .  Value: "\"testing\""
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  EndPos: -
+    27  .  .  .  .  }
+    28  .  .  .  .  2: *ast.ImportSpec {
+    29  .  .  .  .  .  Path: *ast.BasicLit {
+    30  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:6:2
+    31  .  .  .  .  .  .  Kind: STRING
+    32  .  .  .  .  .  .  Value: "\"time\""
+    33  .  .  .  .  .  }
+    34  .  .  .  .  .  EndPos: -
+    35  .  .  .  .  }
+    36  .  .  .  }
+    37  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:7:1
+    38  .  .  }
+    39  .  .  1: *ast.GenDecl {
+    40  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:9:1
+    41  .  .  .  Tok: var
+    42  .  .  .  Lparen: -
+    43  .  .  .  Specs: []ast.Spec (len = 1) {
+    44  .  .  .  .  0: *ast.ValueSpec {
+    45  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    46  .  .  .  .  .  .  0: *ast.Ident {
+    47  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:5
+    48  .  .  .  .  .  .  .  Name: "values"
+    49  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  Name: "values"
+    52  .  .  .  .  .  .  .  .  Decl: *(obj @ 44)
+    53  .  .  .  .  .  .  .  .  Data: 0
+    54  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  }
+    56  .  .  .  .  .  }
+    57  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    58  .  .  .  .  .  .  0: *ast.CompositeLit {
+    59  .  .  .  .  .  .  .  Type: *ast.ArrayType {
+    60  .  .  .  .  .  .  .  .  Lbrack: D:\Projects\GoLint\doc\ClosureError_test.go:9:14
+    61  .  .  .  .  .  .  .  .  Elt: *ast.Ident {
+    62  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:16
+    63  .  .  .  .  .  .  .  .  .  Name: "int"
+    64  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:9:19
+    67  .  .  .  .  .  .  .  Elts: []ast.Expr (len = 5) {
+    68  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+    69  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:20
+    70  .  .  .  .  .  .  .  .  .  Kind: INT
+    71  .  .  .  .  .  .  .  .  .  Value: "1"
+    72  .  .  .  .  .  .  .  .  }
+    73  .  .  .  .  .  .  .  .  1: *ast.BasicLit {
+    74  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:23
+    75  .  .  .  .  .  .  .  .  .  Kind: INT
+    76  .  .  .  .  .  .  .  .  .  Value: "2"
+    77  .  .  .  .  .  .  .  .  }
+    78  .  .  .  .  .  .  .  .  2: *ast.BasicLit {
+    79  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:26
+    80  .  .  .  .  .  .  .  .  .  Kind: INT
+    81  .  .  .  .  .  .  .  .  .  Value: "3"
+    82  .  .  .  .  .  .  .  .  }
+    83  .  .  .  .  .  .  .  .  3: *ast.BasicLit {
+    84  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:29
+    85  .  .  .  .  .  .  .  .  .  Kind: INT
+    86  .  .  .  .  .  .  .  .  .  Value: "4"
+    87  .  .  .  .  .  .  .  .  }
+    88  .  .  .  .  .  .  .  .  4: *ast.BasicLit {
+    89  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:9:32
+    90  .  .  .  .  .  .  .  .  .  Kind: INT
+    91  .  .  .  .  .  .  .  .  .  Value: "5"
+    92  .  .  .  .  .  .  .  .  }
+    93  .  .  .  .  .  .  .  }
+    94  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:9:33
+    95  .  .  .  .  .  .  .  Incomplete: false
+    96  .  .  .  .  .  .  }
+    97  .  .  .  .  .  }
+    98  .  .  .  .  }
+    99  .  .  .  }
+   100  .  .  .  Rparen: -
+   101  .  .  }
+   102  .  .  2: *ast.FuncDecl {
+   103  .  .  .  Name: *ast.Ident {
+   104  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:11:6
+   105  .  .  .  .  Name: "Test"
+   106  .  .  .  .  Obj: *ast.Object {
+   107  .  .  .  .  .  Kind: func
+   108  .  .  .  .  .  Name: "Test"
+   109  .  .  .  .  .  Decl: *(obj @ 102)
+   110  .  .  .  .  }
+   111  .  .  .  }
+   112  .  .  .  Type: *ast.FuncType {
+   113  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:11:1
+   114  .  .  .  .  Params: *ast.FieldList {
+   115  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:11:10
+   116  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   117  .  .  .  .  .  .  0: *ast.Field {
+   118  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   119  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:11:11
+   121  .  .  .  .  .  .  .  .  .  Name: "t"
+   122  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   123  .  .  .  .  .  .  .  .  .  .  Kind: var
+   124  .  .  .  .  .  .  .  .  .  .  Name: "t"
+   125  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 117)
+   126  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  }
+   128  .  .  .  .  .  .  .  }
+   129  .  .  .  .  .  .  .  Type: *ast.StarExpr {
+   130  .  .  .  .  .  .  .  .  Star: D:\Projects\GoLint\doc\ClosureError_test.go:11:13
+   131  .  .  .  .  .  .  .  .  X: *ast.SelectorExpr {
+   132  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   133  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:11:14
+   134  .  .  .  .  .  .  .  .  .  .  Name: "testing"
+   135  .  .  .  .  .  .  .  .  .  }
+   136  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   137  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:11:22
+   138  .  .  .  .  .  .  .  .  .  .  Name: "T"
+   139  .  .  .  .  .  .  .  .  .  }
+   140  .  .  .  .  .  .  .  .  }
+   141  .  .  .  .  .  .  .  }
+   142  .  .  .  .  .  .  }
+   143  .  .  .  .  .  }
+   144  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:11:23
+   145  .  .  .  .  }
+   146  .  .  .  }
+   147  .  .  .  Body: *ast.BlockStmt {
+   148  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:11:25
+   149  .  .  .  .  List: []ast.Stmt (len = 15) {
+   150  .  .  .  .  .  0: *ast.RangeStmt {
+   151  .  .  .  .  .  .  For: D:\Projects\GoLint\doc\ClosureError_test.go:12:2
+   152  .  .  .  .  .  .  Key: *ast.Ident {
+   153  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:12:6
+   154  .  .  .  .  .  .  .  Name: "_"
+   155  .  .  .  .  .  .  .  Obj: *ast.Object {
+   156  .  .  .  .  .  .  .  .  Kind: var
+   157  .  .  .  .  .  .  .  .  Name: "_"
+   158  .  .  .  .  .  .  .  .  Decl: *ast.AssignStmt {
+   159  .  .  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 2) {
+   160  .  .  .  .  .  .  .  .  .  .  0: *(obj @ 152)
+   161  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   162  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:12:9
+   163  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   164  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   165  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   166  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   167  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 158)
+   168  .  .  .  .  .  .  .  .  .  .  .  }
+   169  .  .  .  .  .  .  .  .  .  .  }
+   170  .  .  .  .  .  .  .  .  .  }
+   171  .  .  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:12:15
+   172  .  .  .  .  .  .  .  .  .  Tok: :=
+   173  .  .  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   174  .  .  .  .  .  .  .  .  .  .  0: *ast.UnaryExpr {
+   175  .  .  .  .  .  .  .  .  .  .  .  OpPos: -
+   176  .  .  .  .  .  .  .  .  .  .  .  Op: range
+   177  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   178  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:12:24
+   179  .  .  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   180  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   181  .  .  .  .  .  .  .  .  .  .  .  }
+   182  .  .  .  .  .  .  .  .  .  .  }
+   183  .  .  .  .  .  .  .  .  .  }
+   184  .  .  .  .  .  .  .  .  }
+   185  .  .  .  .  .  .  .  }
+   186  .  .  .  .  .  .  }
+   187  .  .  .  .  .  .  Value: *(obj @ 161)
+   188  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:12:15
+   189  .  .  .  .  .  .  Tok: :=
+   190  .  .  .  .  .  .  Range: D:\Projects\GoLint\doc\ClosureError_test.go:12:18
+   191  .  .  .  .  .  .  X: *(obj @ 177)
+   192  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   193  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:12:31
+   194  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   195  .  .  .  .  .  .  .  .  0: *ast.GoStmt {
+   196  .  .  .  .  .  .  .  .  .  Go: D:\Projects\GoLint\doc\ClosureError_test.go:13:3
+   197  .  .  .  .  .  .  .  .  .  Call: *ast.CallExpr {
+   198  .  .  .  .  .  .  .  .  .  .  Fun: *ast.FuncLit {
+   199  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.FuncType {
+   200  .  .  .  .  .  .  .  .  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:13:6
+   201  .  .  .  .  .  .  .  .  .  .  .  .  Params: *ast.FieldList {
+   202  .  .  .  .  .  .  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:13:10
+   203  .  .  .  .  .  .  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:13:11
+   204  .  .  .  .  .  .  .  .  .  .  .  .  }
+   205  .  .  .  .  .  .  .  .  .  .  .  }
+   206  .  .  .  .  .  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   207  .  .  .  .  .  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:13:13
+   208  .  .  .  .  .  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   209  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
+   210  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   211  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   212  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   213  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:14:4
+   214  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   215  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   216  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   217  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:14:8
+   218  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Printf"
+   219  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   220  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   221  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:14:14
+   222  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   223  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   224  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:14:15
+   225  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   226  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"value = %d\\n\""
+   227  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   228  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   229  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:14:31
+   230  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   231  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 164)
+   232  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   233  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   234  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   235  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:14:36
+   236  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   237  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   238  .  .  .  .  .  .  .  .  .  .  .  .  }
+   239  .  .  .  .  .  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:15:3
+   240  .  .  .  .  .  .  .  .  .  .  .  }
+   241  .  .  .  .  .  .  .  .  .  .  }
+   242  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:15:4
+   243  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   244  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:15:5
+   245  .  .  .  .  .  .  .  .  .  }
+   246  .  .  .  .  .  .  .  .  }
+   247  .  .  .  .  .  .  .  }
+   248  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:16:2
+   249  .  .  .  .  .  .  }
+   250  .  .  .  .  .  }
+   251  .  .  .  .  .  1: *ast.ExprStmt {
+   252  .  .  .  .  .  .  X: *ast.CallExpr {
+   253  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   254  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   255  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:18:2
+   256  .  .  .  .  .  .  .  .  .  Name: "time"
+   257  .  .  .  .  .  .  .  .  }
+   258  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   259  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:18:7
+   260  .  .  .  .  .  .  .  .  .  Name: "Sleep"
+   261  .  .  .  .  .  .  .  .  }
+   262  .  .  .  .  .  .  .  }
+   263  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:18:12
+   264  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   265  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+   266  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+   267  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:18:13
+   268  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   269  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   270  .  .  .  .  .  .  .  .  .  }
+   271  .  .  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:18:15
+   272  .  .  .  .  .  .  .  .  .  Op: *
+   273  .  .  .  .  .  .  .  .  .  Y: *ast.SelectorExpr {
+   274  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   275  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:18:17
+   276  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   277  .  .  .  .  .  .  .  .  .  .  }
+   278  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   279  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:18:22
+   280  .  .  .  .  .  .  .  .  .  .  .  Name: "Second"
+   281  .  .  .  .  .  .  .  .  .  .  }
+   282  .  .  .  .  .  .  .  .  .  }
+   283  .  .  .  .  .  .  .  .  }
+   284  .  .  .  .  .  .  .  }
+   285  .  .  .  .  .  .  .  Ellipsis: -
+   286  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:18:28
+   287  .  .  .  .  .  .  }
+   288  .  .  .  .  .  }
+   289  .  .  .  .  .  2: *ast.ExprStmt {
+   290  .  .  .  .  .  .  X: *ast.CallExpr {
+   291  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   292  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   293  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:19:2
+   294  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   295  .  .  .  .  .  .  .  .  }
+   296  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   297  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:19:6
+   298  .  .  .  .  .  .  .  .  .  Name: "Println"
+   299  .  .  .  .  .  .  .  .  }
+   300  .  .  .  .  .  .  .  }
+   301  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:19:13
+   302  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   303  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   304  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:19:14
+   305  .  .  .  .  .  .  .  .  .  Kind: STRING
+   306  .  .  .  .  .  .  .  .  .  Value: "\"\""
+   307  .  .  .  .  .  .  .  .  }
+   308  .  .  .  .  .  .  .  }
+   309  .  .  .  .  .  .  .  Ellipsis: -
+   310  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:19:16
+   311  .  .  .  .  .  .  }
+   312  .  .  .  .  .  }
+   313  .  .  .  .  .  3: *ast.RangeStmt {
+   314  .  .  .  .  .  .  For: D:\Projects\GoLint\doc\ClosureError_test.go:21:2
+   315  .  .  .  .  .  .  Key: *ast.Ident {
+   316  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:21:6
+   317  .  .  .  .  .  .  .  Name: "_"
+   318  .  .  .  .  .  .  .  Obj: *ast.Object {
+   319  .  .  .  .  .  .  .  .  Kind: var
+   320  .  .  .  .  .  .  .  .  Name: "_"
+   321  .  .  .  .  .  .  .  .  Decl: *ast.AssignStmt {
+   322  .  .  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 2) {
+   323  .  .  .  .  .  .  .  .  .  .  0: *(obj @ 315)
+   324  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   325  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:21:9
+   326  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   327  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   328  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   329  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   330  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 321)
+   331  .  .  .  .  .  .  .  .  .  .  .  }
+   332  .  .  .  .  .  .  .  .  .  .  }
+   333  .  .  .  .  .  .  .  .  .  }
+   334  .  .  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:21:15
+   335  .  .  .  .  .  .  .  .  .  Tok: :=
+   336  .  .  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   337  .  .  .  .  .  .  .  .  .  .  0: *ast.UnaryExpr {
+   338  .  .  .  .  .  .  .  .  .  .  .  OpPos: -
+   339  .  .  .  .  .  .  .  .  .  .  .  Op: range
+   340  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   341  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:21:24
+   342  .  .  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   343  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   344  .  .  .  .  .  .  .  .  .  .  .  }
+   345  .  .  .  .  .  .  .  .  .  .  }
+   346  .  .  .  .  .  .  .  .  .  }
+   347  .  .  .  .  .  .  .  .  }
+   348  .  .  .  .  .  .  .  }
+   349  .  .  .  .  .  .  }
+   350  .  .  .  .  .  .  Value: *(obj @ 324)
+   351  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:21:15
+   352  .  .  .  .  .  .  Tok: :=
+   353  .  .  .  .  .  .  Range: D:\Projects\GoLint\doc\ClosureError_test.go:21:18
+   354  .  .  .  .  .  .  X: *(obj @ 340)
+   355  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   356  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:21:31
+   357  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   358  .  .  .  .  .  .  .  .  0: *ast.GoStmt {
+   359  .  .  .  .  .  .  .  .  .  Go: D:\Projects\GoLint\doc\ClosureError_test.go:22:3
+   360  .  .  .  .  .  .  .  .  .  Call: *ast.CallExpr {
+   361  .  .  .  .  .  .  .  .  .  .  Fun: *ast.FuncLit {
+   362  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.FuncType {
+   363  .  .  .  .  .  .  .  .  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:22:6
+   364  .  .  .  .  .  .  .  .  .  .  .  .  Params: *ast.FieldList {
+   365  .  .  .  .  .  .  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:22:10
+   366  .  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   367  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+   368  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   369  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   370  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:22:11
+   371  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   372  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   373  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   374  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   375  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 367)
+   376  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   377  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   378  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   379  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   380  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:22:17
+   381  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int"
+   382  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   383  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   384  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   385  .  .  .  .  .  .  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:22:20
+   386  .  .  .  .  .  .  .  .  .  .  .  .  }
+   387  .  .  .  .  .  .  .  .  .  .  .  }
+   388  .  .  .  .  .  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   389  .  .  .  .  .  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:22:22
+   390  .  .  .  .  .  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   391  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
+   392  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   393  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   394  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+
+   395  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:23:4
+   396  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   397  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   398  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   399  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:23:8
+   400  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Printf"
+   401  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   402  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   403  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:23:14
+   404  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   405  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   406  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:23:15
+   407  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   408  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"value = %d\\n\""
+   409  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   410  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   411  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:23:31
+   412  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   413  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 372)
+   414  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   415  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   416  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   417  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:23:36
+   418  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   419  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   420  .  .  .  .  .  .  .  .  .  .  .  .  }
+   421  .  .  .  .  .  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:24:3
+   422  .  .  .  .  .  .  .  .  .  .  .  }
+   423  .  .  .  .  .  .  .  .  .  .  }
+   424  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:24:4
+   425  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   426  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   427  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:24:5
+   428  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   429  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 327)
+   430  .  .  .  .  .  .  .  .  .  .  .  }
+   431  .  .  .  .  .  .  .  .  .  .  }
+   432  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   433  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:24:10
+   434  .  .  .  .  .  .  .  .  .  }
+   435  .  .  .  .  .  .  .  .  }
+   436  .  .  .  .  .  .  .  }
+   437  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:25:2
+   438  .  .  .  .  .  .  }
+   439  .  .  .  .  .  }
+   440  .  .  .  .  .  4: *ast.ExprStmt {
+   441  .  .  .  .  .  .  X: *ast.CallExpr {
+   442  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   443  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   444  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:27:2
+   445  .  .  .  .  .  .  .  .  .  Name: "time"
+   446  .  .  .  .  .  .  .  .  }
+   447  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   448  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:27:7
+   449  .  .  .  .  .  .  .  .  .  Name: "Sleep"
+   450  .  .  .  .  .  .  .  .  }
+   451  .  .  .  .  .  .  .  }
+   452  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:27:12
+   453  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   454  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+   455  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+   456  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:27:13
+   457  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   458  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   459  .  .  .  .  .  .  .  .  .  }
+   460  .  .  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:27:15
+   461  .  .  .  .  .  .  .  .  .  Op: *
+   462  .  .  .  .  .  .  .  .  .  Y: *ast.SelectorExpr {
+   463  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   464  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:27:17
+   465  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   466  .  .  .  .  .  .  .  .  .  .  }
+   467  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   468  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:27:22
+   469  .  .  .  .  .  .  .  .  .  .  .  Name: "Second"
+   470  .  .  .  .  .  .  .  .  .  .  }
+   471  .  .  .  .  .  .  .  .  .  }
+   472  .  .  .  .  .  .  .  .  }
+   473  .  .  .  .  .  .  .  }
+   474  .  .  .  .  .  .  .  Ellipsis: -
+   475  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:27:28
+   476  .  .  .  .  .  .  }
+   477  .  .  .  .  .  }
+   478  .  .  .  .  .  5: *ast.ExprStmt {
+   479  .  .  .  .  .  .  X: *ast.CallExpr {
+   480  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   481  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   482  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:28:2
+   483  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   484  .  .  .  .  .  .  .  .  }
+   485  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   486  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:28:6
+   487  .  .  .  .  .  .  .  .  .  Name: "Println"
+   488  .  .  .  .  .  .  .  .  }
+   489  .  .  .  .  .  .  .  }
+   490  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:28:13
+   491  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   492  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   493  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:28:14
+   494  .  .  .  .  .  .  .  .  .  Kind: STRING
+   495  .  .  .  .  .  .  .  .  .  Value: "\"\""
+   496  .  .  .  .  .  .  .  .  }
+   497  .  .  .  .  .  .  .  }
+   498  .  .  .  .  .  .  .  Ellipsis: -
+   499  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:28:16
+   500  .  .  .  .  .  .  }
+   501  .  .  .  .  .  }
+   502  .  .  .  .  .  6: *ast.RangeStmt {
+   503  .  .  .  .  .  .  For: D:\Projects\GoLint\doc\ClosureError_test.go:30:2
+   504  .  .  .  .  .  .  Key: *ast.Ident {
+   505  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:30:6
+   506  .  .  .  .  .  .  .  Name: "_"
+   507  .  .  .  .  .  .  .  Obj: *ast.Object {
+   508  .  .  .  .  .  .  .  .  Kind: var
+   509  .  .  .  .  .  .  .  .  Name: "_"
+   510  .  .  .  .  .  .  .  .  Decl: *ast.AssignStmt {
+   511  .  .  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 2) {
+   512  .  .  .  .  .  .  .  .  .  .  0: *(obj @ 504)
+   513  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   514  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:30:9
+   515  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   516  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   517  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   518  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   519  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 510)
+   520  .  .  .  .  .  .  .  .  .  .  .  }
+   521  .  .  .  .  .  .  .  .  .  .  }
+   522  .  .  .  .  .  .  .  .  .  }
+   523  .  .  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:30:15
+   524  .  .  .  .  .  .  .  .  .  Tok: :=
+   525  .  .  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   526  .  .  .  .  .  .  .  .  .  .  0: *ast.UnaryExpr {
+   527  .  .  .  .  .  .  .  .  .  .  .  OpPos: -
+   528  .  .  .  .  .  .  .  .  .  .  .  Op: range
+   529  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   530  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:30:24
+   531  .  .  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   532  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   533  .  .  .  .  .  .  .  .  .  .  .  }
+   534  .  .  .  .  .  .  .  .  .  .  }
+   535  .  .  .  .  .  .  .  .  .  }
+   536  .  .  .  .  .  .  .  .  }
+   537  .  .  .  .  .  .  .  }
+   538  .  .  .  .  .  .  }
+   539  .  .  .  .  .  .  Value: *(obj @ 513)
+   540  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:30:15
+   541  .  .  .  .  .  .  Tok: :=
+   542  .  .  .  .  .  .  Range: D:\Projects\GoLint\doc\ClosureError_test.go:30:18
+   543  .  .  .  .  .  .  X: *(obj @ 529)
+   544  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   545  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:30:31
+   546  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   547  .  .  .  .  .  .  .  .  0: *ast.GoStmt {
+   548  .  .  .  .  .  .  .  .  .  Go: D:\Projects\GoLint\doc\ClosureError_test.go:31:3
+   549  .  .  .  .  .  .  .  .  .  Call: *ast.CallExpr {
+   550  .  .  .  .  .  .  .  .  .  .  Fun: *ast.FuncLit {
+   551  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.FuncType {
+   552  .  .  .  .  .  .  .  .  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:31:6
+   553  .  .  .  .  .  .  .  .  .  .  .  .  Params: *ast.FieldList {
+   554  .  .  .  .  .  .  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:31:10
+   555  .  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   556  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+   557  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   558  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+
+   559  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:31:11
+   560  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+   561  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   562  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+
+   563  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+   564  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 556)
+   565  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   566  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   567  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   568  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   569  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:31:13
+   570  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int"
+   571  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   572  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   573  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   574  .  .  .  .  .  .  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:31:16
+   575  .  .  .  .  .  .  .  .  .  .  .  .  }
+   576  .  .  .  .  .  .  .  .  .  .  .  }
+   577  .  .  .  .  .  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   578  .  .  .  .  .  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:31:18
+   579  .  .  .  .  .  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   580  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
+   581  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   582  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   583  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   584  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:32:4
+   585  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   586  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   587  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   588  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:32:8
+   589  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Printf"
+   590  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   591  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   592  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:32:14
+   593  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   594  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   595  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:32:15
+   596  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   597  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"value = %d\\n\""
+   598  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   599  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   600  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:32:31
+   601  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+
+   602  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 561)
+   603  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   604  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   605  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   606  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:32:32
+   607  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   608  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   609  .  .  .  .  .  .  .  .  .  .  .  .  }
+   610  .  .  .  .  .  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:33:3
+   611  .  .  .  .  .  .  .  .  .  .  .  }
+   612  .  .  .  .  .  .  .  .  .  .  }
+   613  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:33:4
+   614  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   615  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   616  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:33:5
+   617  .  .  .  .  .  .  .  .  .  .  .  .  Name: "value"
+   618  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 516)
+   619  .  .  .  .  .  .  .  .  .  .  .  }
+   620  .  .  .  .  .  .  .  .  .  .  }
+   621  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   622  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:33:10
+   623  .  .  .  .  .  .  .  .  .  }
+   624  .  .  .  .  .  .  .  .  }
+   625  .  .  .  .  .  .  .  }
+   626  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:34:2
+   627  .  .  .  .  .  .  }
+   628  .  .  .  .  .  }
+   629  .  .  .  .  .  7: *ast.ExprStmt {
+   630  .  .  .  .  .  .  X: *ast.CallExpr {
+   631  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   632  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   633  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:44:2
+   634  .  .  .  .  .  .  .  .  .  Name: "time"
+   635  .  .  .  .  .  .  .  .  }
+   636  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   637  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:44:7
+   638  .  .  .  .  .  .  .  .  .  Name: "Sleep"
+   639  .  .  .  .  .  .  .  .  }
+   640  .  .  .  .  .  .  .  }
+   641  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:44:12
+   642  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   643  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+   644  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+   645  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:44:13
+   646  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   647  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   648  .  .  .  .  .  .  .  .  .  }
+   649  .  .  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:44:15
+   650  .  .  .  .  .  .  .  .  .  Op: *
+   651  .  .  .  .  .  .  .  .  .  Y: *ast.SelectorExpr {
+   652  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   653  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:44:17
+   654  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   655  .  .  .  .  .  .  .  .  .  .  }
+   656  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   657  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:44:22
+   658  .  .  .  .  .  .  .  .  .  .  .  Name: "Second"
+   659  .  .  .  .  .  .  .  .  .  .  }
+   660  .  .  .  .  .  .  .  .  .  }
+   661  .  .  .  .  .  .  .  .  }
+   662  .  .  .  .  .  .  .  }
+   663  .  .  .  .  .  .  .  Ellipsis: -
+   664  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:44:28
+   665  .  .  .  .  .  .  }
+   666  .  .  .  .  .  }
+   667  .  .  .  .  .  8: *ast.ExprStmt {
+   668  .  .  .  .  .  .  X: *ast.CallExpr {
+   669  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   670  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   671  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:45:2
+   672  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   673  .  .  .  .  .  .  .  .  }
+   674  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   675  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:45:6
+   676  .  .  .  .  .  .  .  .  .  Name: "Println"
+   677  .  .  .  .  .  .  .  .  }
+   678  .  .  .  .  .  .  .  }
+   679  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:45:13
+   680  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   681  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   682  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:45:14
+   683  .  .  .  .  .  .  .  .  .  Kind: STRING
+   684  .  .  .  .  .  .  .  .  .  Value: "\"\""
+   685  .  .  .  .  .  .  .  .  }
+   686  .  .  .  .  .  .  .  }
+   687  .  .  .  .  .  .  .  Ellipsis: -
+   688  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:45:16
+   689  .  .  .  .  .  .  }
+   690  .  .  .  .  .  }
+   691  .  .  .  .  .  9: *ast.ForStmt {
+   692  .  .  .  .  .  .  For: D:\Projects\GoLint\doc\ClosureError_test.go:47:2
+   693  .  .  .  .  .  .  Init: *ast.AssignStmt {
+   694  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
+   695  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   696  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:6
+   697  .  .  .  .  .  .  .  .  .  Name: "i"
+   698  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   699  .  .  .  .  .  .  .  .  .  .  Kind: var
+   700  .  .  .  .  .  .  .  .  .  .  Name: "i"
+   701  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 693)
+   702  .  .  .  .  .  .  .  .  .  }
+   703  .  .  .  .  .  .  .  .  }
+   704  .  .  .  .  .  .  .  }
+   705  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:47:8
+   706  .  .  .  .  .  .  .  Tok: :=
+   707  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   708  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   709  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:11
+   710  .  .  .  .  .  .  .  .  .  Kind: INT
+   711  .  .  .  .  .  .  .  .  .  Value: "0"
+   712  .  .  .  .  .  .  .  .  }
+   713  .  .  .  .  .  .  .  }
+   714  .  .  .  .  .  .  }
+   715  .  .  .  .  .  .  Cond: *ast.BinaryExpr {
+   716  .  .  .  .  .  .  .  X: *ast.Ident {
+   717  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:14
+   718  .  .  .  .  .  .  .  .  Name: "i"
+   719  .  .  .  .  .  .  .  .  Obj: *(obj @ 698)
+   720  .  .  .  .  .  .  .  }
+   721  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:47:16
+   722  .  .  .  .  .  .  .  Op: <
+   723  .  .  .  .  .  .  .  Y: *ast.CallExpr {
+   724  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   725  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:18
+   726  .  .  .  .  .  .  .  .  .  Name: "len"
+   727  .  .  .  .  .  .  .  .  }
+   728  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:47:21
+   729  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   730  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   731  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:22
+   732  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   733  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   734  .  .  .  .  .  .  .  .  .  }
+   735  .  .  .  .  .  .  .  .  }
+   736  .  .  .  .  .  .  .  .  Ellipsis: -
+   737  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:47:28
+   738  .  .  .  .  .  .  .  }
+   739  .  .  .  .  .  .  }
+   740  .  .  .  .  .  .  Post: *ast.IncDecStmt {
+   741  .  .  .  .  .  .  .  X: *ast.Ident {
+   742  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:47:31
+   743  .  .  .  .  .  .  .  .  Name: "i"
+   744  .  .  .  .  .  .  .  .  Obj: *(obj @ 698)
+   745  .  .  .  .  .  .  .  }
+   746  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:47:32
+   747  .  .  .  .  .  .  .  Tok: ++
+   748  .  .  .  .  .  .  }
+   749  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   750  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:47:35
+   751  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   752  .  .  .  .  .  .  .  .  0: *ast.GoStmt {
+   753  .  .  .  .  .  .  .  .  .  Go: D:\Projects\GoLint\doc\ClosureError_test.go:48:3
+   754  .  .  .  .  .  .  .  .  .  Call: *ast.CallExpr {
+   755  .  .  .  .  .  .  .  .  .  .  Fun: *ast.FuncLit {
+   756  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.FuncType {
+   757  .  .  .  .  .  .  .  .  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:48:6
+   758  .  .  .  .  .  .  .  .  .  .  .  .  Params: *ast.FieldList {
+   759  .  .  .  .  .  .  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:48:10
+   760  .  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   761  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+   762  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   763  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+
+   764  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:48:11
+   765  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+   766  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   767  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+
+   768  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+   769  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 761)
+   770  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   771  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   772  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   773  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   774  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:48:13
+   775  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int"
+   776  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   777  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   778  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   779  .  .  .  .  .  .  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:48:16
+   780  .  .  .  .  .  .  .  .  .  .  .  .  }
+   781  .  .  .  .  .  .  .  .  .  .  .  }
+   782  .  .  .  .  .  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   783  .  .  .  .  .  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:48:18
+   784  .  .  .  .  .  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   785  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
+   786  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   787  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   788  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   789  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:49:4
+   790  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   791  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   792  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   793  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:49:8
+   794  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Printf"
+   795  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   796  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   797  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:49:14
+   798  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   799  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   800  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:49:15
+   801  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   802  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"value = %d\\n\""
+   803  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   804  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.IndexExpr {
+   805  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   806  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:49:31
+   807  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   808  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   809  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   810  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lbrack: D:\Projects\GoLint\doc\ClosureError_test.go:49:37
+   811  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Index: *ast.Ident {
+   812  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:49:38
+   813  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "a"
+   814  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 766)
+   815  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   816  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rbrack: D:\Projects\GoLint\doc\ClosureError_test.go:49:39
+   817  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   818  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   819  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   820  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:49:40
+   821  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   822  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   823  .  .  .  .  .  .  .  .  .  .  .  .  }
+   824  .  .  .  .  .  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:50:3
+   825  .  .  .  .  .  .  .  .  .  .  .  }
+   826  .  .  .  .  .  .  .  .  .  .  }
+   827  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:50:4
+   828  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   829  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   830  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:50:5
+   831  .  .  .  .  .  .  .  .  .  .  .  .  Name: "i"
+   832  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 698)
+   833  .  .  .  .  .  .  .  .  .  .  .  }
+   834  .  .  .  .  .  .  .  .  .  .  }
+   835  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+   836  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:50:6
+   837  .  .  .  .  .  .  .  .  .  }
+   838  .  .  .  .  .  .  .  .  }
+   839  .  .  .  .  .  .  .  }
+   840  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:51:2
+   841  .  .  .  .  .  .  }
+   842  .  .  .  .  .  }
+   843  .  .  .  .  .  10: *ast.ExprStmt {
+   844  .  .  .  .  .  .  X: *ast.CallExpr {
+   845  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   846  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   847  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:53:2
+   848  .  .  .  .  .  .  .  .  .  Name: "time"
+   849  .  .  .  .  .  .  .  .  }
+   850  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   851  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:53:7
+   852  .  .  .  .  .  .  .  .  .  Name: "Sleep"
+   853  .  .  .  .  .  .  .  .  }
+   854  .  .  .  .  .  .  .  }
+   855  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:53:12
+   856  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   857  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+   858  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+   859  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:53:13
+   860  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   861  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   862  .  .  .  .  .  .  .  .  .  }
+   863  .  .  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:53:15
+   864  .  .  .  .  .  .  .  .  .  Op: *
+   865  .  .  .  .  .  .  .  .  .  Y: *ast.SelectorExpr {
+   866  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   867  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:53:17
+   868  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   869  .  .  .  .  .  .  .  .  .  .  }
+   870  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   871  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:53:22
+   872  .  .  .  .  .  .  .  .  .  .  .  Name: "Second"
+   873  .  .  .  .  .  .  .  .  .  .  }
+   874  .  .  .  .  .  .  .  .  .  }
+   875  .  .  .  .  .  .  .  .  }
+   876  .  .  .  .  .  .  .  }
+   877  .  .  .  .  .  .  .  Ellipsis: -
+   878  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:53:28
+   879  .  .  .  .  .  .  }
+   880  .  .  .  .  .  }
+   881  .  .  .  .  .  11: *ast.ExprStmt {
+   882  .  .  .  .  .  .  X: *ast.CallExpr {
+   883  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   884  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   885  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:54:2
+   886  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   887  .  .  .  .  .  .  .  .  }
+   888  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   889  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:54:6
+   890  .  .  .  .  .  .  .  .  .  Name: "Println"
+   891  .  .  .  .  .  .  .  .  }
+   892  .  .  .  .  .  .  .  }
+   893  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:54:13
+   894  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   895  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   896  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:54:14
+   897  .  .  .  .  .  .  .  .  .  Kind: STRING
+   898  .  .  .  .  .  .  .  .  .  Value: "\"\""
+   899  .  .  .  .  .  .  .  .  }
+   900  .  .  .  .  .  .  .  }
+   901  .  .  .  .  .  .  .  Ellipsis: -
+   902  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:54:16
+   903  .  .  .  .  .  .  }
+   904  .  .  .  .  .  }
+   905  .  .  .  .  .  12: *ast.ForStmt {
+   906  .  .  .  .  .  .  For: D:\Projects\GoLint\doc\ClosureError_test.go:56:2
+   907  .  .  .  .  .  .  Init: *ast.AssignStmt {
+   908  .  .  .  .  .  .  .  Lhs: []ast.Expr (len = 1) {
+   909  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   910  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:6
+   911  .  .  .  .  .  .  .  .  .  Name: "i"
+   912  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   913  .  .  .  .  .  .  .  .  .  .  Kind: var
+   914  .  .  .  .  .  .  .  .  .  .  Name: "i"
+   915  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 907)
+   916  .  .  .  .  .  .  .  .  .  }
+   917  .  .  .  .  .  .  .  .  }
+   918  .  .  .  .  .  .  .  }
+   919  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:56:8
+   920  .  .  .  .  .  .  .  Tok: :=
+   921  .  .  .  .  .  .  .  Rhs: []ast.Expr (len = 1) {
+   922  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   923  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:11
+   924  .  .  .  .  .  .  .  .  .  Kind: INT
+   925  .  .  .  .  .  .  .  .  .  Value: "0"
+   926  .  .  .  .  .  .  .  .  }
+   927  .  .  .  .  .  .  .  }
+   928  .  .  .  .  .  .  }
+   929  .  .  .  .  .  .  Cond: *ast.BinaryExpr {
+   930  .  .  .  .  .  .  .  X: *ast.Ident {
+   931  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:14
+   932  .  .  .  .  .  .  .  .  Name: "i"
+   933  .  .  .  .  .  .  .  .  Obj: *(obj @ 912)
+   934  .  .  .  .  .  .  .  }
+   935  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:56:16
+   936  .  .  .  .  .  .  .  Op: <
+   937  .  .  .  .  .  .  .  Y: *ast.CallExpr {
+   938  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   939  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:18
+   940  .  .  .  .  .  .  .  .  .  Name: "len"
+   941  .  .  .  .  .  .  .  .  }
+   942  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:56:21
+   943  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   944  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   945  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:22
+   946  .  .  .  .  .  .  .  .  .  .  Name: "values"
+   947  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   948  .  .  .  .  .  .  .  .  .  }
+   949  .  .  .  .  .  .  .  .  }
+   950  .  .  .  .  .  .  .  .  Ellipsis: -
+   951  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:56:28
+   952  .  .  .  .  .  .  .  }
+   953  .  .  .  .  .  .  }
+   954  .  .  .  .  .  .  Post: *ast.IncDecStmt {
+   955  .  .  .  .  .  .  .  X: *ast.Ident {
+   956  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:56:31
+   957  .  .  .  .  .  .  .  .  Name: "i"
+   958  .  .  .  .  .  .  .  .  Obj: *(obj @ 912)
+   959  .  .  .  .  .  .  .  }
+   960  .  .  .  .  .  .  .  TokPos: D:\Projects\GoLint\doc\ClosureError_test.go:56:32
+   961  .  .  .  .  .  .  .  Tok: ++
+   962  .  .  .  .  .  .  }
+   963  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   964  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:56:35
+   965  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   966  .  .  .  .  .  .  .  .  0: *ast.GoStmt {
+   967  .  .  .  .  .  .  .  .  .  Go: D:\Projects\GoLint\doc\ClosureError_test.go:57:3
+   968  .  .  .  .  .  .  .  .  .  Call: *ast.CallExpr {
+   969  .  .  .  .  .  .  .  .  .  .  Fun: *ast.FuncLit {
+   970  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.FuncType {
+   971  .  .  .  .  .  .  .  .  .  .  .  .  Func: D:\Projects\GoLint\doc\ClosureError_test.go:57:6
+   972  .  .  .  .  .  .  .  .  .  .  .  .  Params: *ast.FieldList {
+   973  .  .  .  .  .  .  .  .  .  .  .  .  .  Opening: D:\Projects\GoLint\doc\ClosureError_test.go:57:10
+   974  .  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 1) {
+   975  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+   976  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   977  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+
+   978  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:57:11
+   979  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "i"
+   980  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   981  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+
+   982  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "i"
+   983  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 975)
+   984  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   985  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   986  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   987  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   988  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:57:13
+   989  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int"
+   990  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   991  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   992  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   993  .  .  .  .  .  .  .  .  .  .  .  .  .  Closing: D:\Projects\GoLint\doc\ClosureError_test.go:57:16
+   994  .  .  .  .  .  .  .  .  .  .  .  .  }
+   995  .  .  .  .  .  .  .  .  .  .  .  }
+   996  .  .  .  .  .  .  .  .  .  .  .  Body: *ast.BlockStmt {
+   997  .  .  .  .  .  .  .  .  .  .  .  .  Lbrace: D:\Projects\GoLint\doc\ClosureError_test.go:57:18
+   998  .  .  .  .  .  .  .  .  .  .  .  .  List: []ast.Stmt (len = 1) {
+   999  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.ExprStmt {
+  1000  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+  1001  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+  1002  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+  1003  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:58:4
+  1004  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+  1005  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1006  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+  1007  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:58:8
+  1008  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Printf"
+  1009  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1010  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1011  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:58:14
+  1012  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+  1013  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+  1014  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:58:15
+  1015  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+  1016  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"value = %d\\n\""
+  1017  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1018  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.IndexExpr {
+  1019  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+  1020  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:58:31
+  1021  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "values"
+  1022  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+  1023  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1024  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lbrack: D:\Projects\GoLint\doc\ClosureError_test.go:58:37
+  1025  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Index: *ast.Ident {
+  1026  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:58:38
+  1027  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "i"
+  1028  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 980)
+  1029  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1030  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rbrack: D:\Projects\GoLint\doc\ClosureError_test.go:58:39
+  1031  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1032  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1033  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+  1034  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:58:40
+  1035  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1036  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1037  .  .  .  .  .  .  .  .  .  .  .  .  }
+  1038  .  .  .  .  .  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:59:3
+  1039  .  .  .  .  .  .  .  .  .  .  .  }
+  1040  .  .  .  .  .  .  .  .  .  .  }
+  1041  .  .  .  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:59:4
+  1042  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+  1043  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+  1044  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:59:5
+  1045  .  .  .  .  .  .  .  .  .  .  .  .  Name: "i"
+  1046  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 912)
+  1047  .  .  .  .  .  .  .  .  .  .  .  }
+  1048  .  .  .  .  .  .  .  .  .  .  }
+  1049  .  .  .  .  .  .  .  .  .  .  Ellipsis: -
+  1050  .  .  .  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:59:6
+  1051  .  .  .  .  .  .  .  .  .  }
+  1052  .  .  .  .  .  .  .  .  }
+  1053  .  .  .  .  .  .  .  }
+  1054  .  .  .  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:60:2
+  1055  .  .  .  .  .  .  }
+  1056  .  .  .  .  .  }
+  1057  .  .  .  .  .  13: *ast.ExprStmt {
+  1058  .  .  .  .  .  .  X: *ast.CallExpr {
+  1059  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+  1060  .  .  .  .  .  .  .  .  X: *ast.Ident {
+  1061  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:62:2
+  1062  .  .  .  .  .  .  .  .  .  Name: "time"
+  1063  .  .  .  .  .  .  .  .  }
+  1064  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+  1065  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:62:7
+  1066  .  .  .  .  .  .  .  .  .  Name: "Sleep"
+  1067  .  .  .  .  .  .  .  .  }
+  1068  .  .  .  .  .  .  .  }
+  1069  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:62:12
+  1070  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+  1071  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+  1072  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+  1073  .  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:62:13
+  1074  .  .  .  .  .  .  .  .  .  .  Kind: INT
+  1075  .  .  .  .  .  .  .  .  .  .  Value: "1"
+  1076  .  .  .  .  .  .  .  .  .  }
+  1077  .  .  .  .  .  .  .  .  .  OpPos: D:\Projects\GoLint\doc\ClosureError_test.go:62:15
+  1078  .  .  .  .  .  .  .  .  .  Op: *
+  1079  .  .  .  .  .  .  .  .  .  Y: *ast.SelectorExpr {
+  1080  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+  1081  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:62:17
+  1082  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+  1083  .  .  .  .  .  .  .  .  .  .  }
+  1084  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+  1085  .  .  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:62:22
+  1086  .  .  .  .  .  .  .  .  .  .  .  Name: "Second"
+  1087  .  .  .  .  .  .  .  .  .  .  }
+  1088  .  .  .  .  .  .  .  .  .  }
+  1089  .  .  .  .  .  .  .  .  }
+  1090  .  .  .  .  .  .  .  }
+  1091  .  .  .  .  .  .  .  Ellipsis: -
+  1092  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:62:28
+  1093  .  .  .  .  .  .  }
+  1094  .  .  .  .  .  }
+  1095  .  .  .  .  .  14: *ast.ExprStmt {
+  1096  .  .  .  .  .  .  X: *ast.CallExpr {
+  1097  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+  1098  .  .  .  .  .  .  .  .  X: *ast.Ident {
+  1099  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:63:2
+  1100  .  .  .  .  .  .  .  .  .  Name: "fmt"
+  1101  .  .  .  .  .  .  .  .  }
+  1102  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+  1103  .  .  .  .  .  .  .  .  .  NamePos: D:\Projects\GoLint\doc\ClosureError_test.go:63:6
+  1104  .  .  .  .  .  .  .  .  .  Name: "Println"
+  1105  .  .  .  .  .  .  .  .  }
+  1106  .  .  .  .  .  .  .  }
+  1107  .  .  .  .  .  .  .  Lparen: D:\Projects\GoLint\doc\ClosureError_test.go:63:13
+  1108  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+  1109  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+  1110  .  .  .  .  .  .  .  .  .  ValuePos: D:\Projects\GoLint\doc\ClosureError_test.go:63:14
+  1111  .  .  .  .  .  .  .  .  .  Kind: STRING
+  1112  .  .  .  .  .  .  .  .  .  Value: "\"\""
+  1113  .  .  .  .  .  .  .  .  }
+  1114  .  .  .  .  .  .  .  }
+  1115  .  .  .  .  .  .  .  Ellipsis: -
+  1116  .  .  .  .  .  .  .  Rparen: D:\Projects\GoLint\doc\ClosureError_test.go:63:16
+  1117  .  .  .  .  .  .  }
+  1118  .  .  .  .  .  }
+  1119  .  .  .  .  }
+  1120  .  .  .  .  Rbrace: D:\Projects\GoLint\doc\ClosureError_test.go:65:1
+  1121  .  .  .  }
+  1122  .  .  }
+  1123  .  }
+  1124  .  FileStart: D:\Projects\GoLint\doc\ClosureError_test.go:1:1
+  1125  .  FileEnd: D:\Projects\GoLint\doc\ClosureError_test.go:65:3
+  1126  .  Scope: *ast.Scope {
+  1127  .  .  Objects: map[string]*ast.Object (len = 2) {
+  1128  .  .  .  "values": *(obj @ 49)
+  1129  .  .  .  "Test": *(obj @ 106)
+  1130  .  .  }
+  1131  .  }
+  1132  .  Imports: []*ast.ImportSpec (len = 3) {
+  1133  .  .  0: *(obj @ 12)
+  1134  .  .  1: *(obj @ 20)
+  1135  .  .  2: *(obj @ 28)
+  1136  .  }
+  1137  .  Unresolved: []*ast.Ident (len = 28) {
+  1138  .  .  0: *(obj @ 61)
+  1139  .  .  1: *(obj @ 132)
+  1140  .  .  2: *(obj @ 212)
+  1141  .  .  3: *(obj @ 254)
+  1142  .  .  4: *(obj @ 274)
+  1143  .  .  5: *(obj @ 292)
+  1144  .  .  6: *(obj @ 379)
+  1145  .  .  7: *(obj @ 394)
+  1146  .  .  8: *(obj @ 443)
+  1147  .  .  9: *(obj @ 463)
+  1148  .  .  10: *(obj @ 481)
+  1149  .  .  11: *(obj @ 568)
+  1150  .  .  12: *(obj @ 583)
+  1151  .  .  13: *(obj @ 632)
+  1152  .  .  14: *(obj @ 652)
+  1153  .  .  15: *(obj @ 670)
+  1154  .  .  16: *(obj @ 724)
+  1155  .  .  17: *(obj @ 773)
+  1156  .  .  18: *(obj @ 788)
+  1157  .  .  19: *(obj @ 846)
+  1158  .  .  20: *(obj @ 866)
+  1159  .  .  21: *(obj @ 884)
+  1160  .  .  22: *(obj @ 938)
+  1161  .  .  23: *(obj @ 987)
+  1162  .  .  24: *(obj @ 1002)
+  1163  .  .  25: *(obj @ 1060)
+  1164  .  .  26: *(obj @ 1080)
+  1165  .  .  27: *(obj @ 1098)
+  1166  .  }
+  1167  }
+--- PASS: Test (0.10s)
+PASS
