@@ -5,4 +5,7 @@ use (
 	grpc-go-master
 	.
 	go-ethereum-master
+	gin-master
+	client-go-master
+	hugo-master
 )

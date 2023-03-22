@@ -175,7 +175,7 @@ k8s-client-go:
 13. 			}
 ```
 
-`ClosureError`:
+`ClosureError`，误报，需要将gostmt后的类型限制在匿名函数中:
 
 ```go
 //Ref: kubernetes-master/pkg/util/async/runner.go
@@ -218,6 +218,87 @@ type Runner struct {
 `ClosureError`类型的存在疑问，更典型的场景应该是循环变量在函数体内被捕获到，但这里i作为临时变量，也存在被引用捕获的可能(**需要再深入了解一下go起goroutine的底层逻辑**)：
 
 ![image-20230320210429604](img/image-20230320210429604.png)
+
+### Gin
+
+无
+
+### Hugo
+
+![image-20230322214206757](img/image-20230322214206757.png)
+
+`HanglingGoroutine`：场景基本与前面的一致
+
+`WaitGroupWaitInLoop`：
+
+```go
+//Ref: hugo-master/lazy/init_test.go
+1		var wg sync.WaitGroup
+2		ctx := context.Background()
+3		// Add some concurrency and randomness to verify thread safety and
+4		// init order.
+5		for i := 0; i < 100; i++ {
+6			wg.Add(1)
+7			go func(i int) {
+8				defer wg.Done()
+9				var err error
+10				if rnd.Intn(10) < 5 {
+11					_, err = root.Do(ctx)
+12					c.Assert(err, qt.IsNil)
+13				}
+14	
+15				// Add a new branch on the fly.
+16				if rnd.Intn(10) > 5 {
+17					branch := branch1_2.Branch(f2())
+18					_, err = branch.Do(ctx)
+19					c.Assert(err, qt.IsNil)
+20				} else {
+21					_, err = branch1_2_1.Do(ctx)
+22					c.Assert(err, qt.IsNil)
+23				}
+24				_, err = branch1_2.Do(ctx)
+25				c.Assert(err, qt.IsNil)
+26			}(i)
+27			wg.Wait()
+28			c.Assert(result, qt.Equals, "root(1)|root(2)|branch_1|branch_1_1|branch_1_2|branch_1_2_1|")
+29	
+30		}
+```
+
+`PassMutexByValue`: 业务逻辑上并没有问题，Clone到了另一份templateNamespace，两个struct用的同一把锁
+
+**规则还要细化，针对 X.Y.Lock()的形式，X和Y都为非StarExpr时为错误？**
+
+```go
+//hugo-master/tpl/tplimpl/template.go
+1	type templateStateMap struct {
+2		mu        sync.RWMutex
+3		templates map[string]*templateState
+4	}
+5	
+6	type templateNamespace struct {
+7		prototypeText      *texttemplate.Template
+8		prototypeHTML      *htmltemplate.Template
+9		prototypeTextClone *texttemplate.Template
+10		prototypeHTMLClone *htmltemplate.Template
+11	
+12		*templateStateMap //是个指针
+13	}
+14	
+15	func (t templateNamespace) Clone() *templateNamespace {
+16		t.mu.Lock()
+17		defer t.mu.Unlock()
+18	
+19		t.templateStateMap = &templateStateMap{
+20			templates: make(map[string]*templateState),
+21		}
+22	
+23		t.prototypeText = texttemplate.Must(t.prototypeText.Clone())
+24		t.prototypeHTML = htmltemplate.Must(t.prototypeHTML.Clone())
+25	
+26		return &t
+27	}
+```
 
 ## 遇到的问题
 
