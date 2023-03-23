@@ -83,11 +83,19 @@ https://stackoverflow.com/questions/49808622/sync-mutex-and-sync-mutex-which-is-
 
 目前的规则：
 
-- WaitGroupAdd：Check if directly calling `$WG.add()` in anonymous goroutine
-- WaitGroupWaitInLoop：Calling `$WG.Wait()` inside a loop blocks the call to `$WG.Done()`
-- HangingGoroutine：Potential goroutine leak due to unbuffered channel send inside loop or unbuffered channel receive in select block
-- ClosureError：Data race due to loop index variable capture
-- PassMutexByValue：Pass or refer to a Mutex or a receiver containing a Mutex as a value type
+- **WaitGroupAdd**：Check if directly calling `$WG.add()` in anonymous goroutine
+- **WaitGroupWaitInLoop**：Calling `$WG.Wait()` inside a loop blocks the call to `$WG.Done()`
+- **HangingGoroutine**：Potential goroutine leak due to unbuffered channel send inside loop or unbuffered channel receive in select block
+- **ClosureError**：Data race due to loop index variable capture
+- **PassMutexByValue**：Pass or refer to a Mutex or a receiver containing a Mutex as a value type
+
+|                 | WaitGroupAdd | WaitGroupWaitInLoop | HangingGoroutine | ClosureError | PassMutexByValue |
+| :-------------: | :----------: | :-----------------: | :--------------: | :----------: | :--------------: |
+|   **Grpc-go**   |              |                     |        2         |              |                  |
+|     **K8S**     |              |                     |        11        |    1(FP)     |      1(FP)       |
+| **go-ethereum** |              |                     |        6         |    2(FP)     |                  |
+|     **Gin**     |              |                     |                  |              |                  |
+|    **Hugo**     |              |          1          |        2         |              |      1(FP)       |
 
 ### Grpc-go
 
@@ -161,18 +169,18 @@ k8s-client-go:
 ```go
 //Ref: kubernetes-master/cmd/kubemark/app/hollow_node_test.go
 1. errCh := make(chan error)
-2. 			go func() {
-3. 				data, err := os.ReadFile(kubeconfigPath)
-4. 				t.Logf("read %d, err=%v\n", len(data), err)
-5. 				errCh <- run(s)
-6. 			}()
+2. go func() {
+3.      data, err := os.ReadFile(kubeconfigPath)
+4. 		t.Logf("read %d, err=%v\n", len(data), err)
+5. 		errCh <- run(s)
+6. 	}()
 7. 
-8. 			select {
-9. 			case err := <-errCh:
-10. 				t.Fatalf("Run finished unexpectedly with error: %v", err)
-11. 			case <-time.After(3 * time.Second):
-12. 				t.Logf("Morph %q hasn't crashed for 3s. Calling success.", morph)
-13. 			}
+8. select {
+9. 	    case err := <-errCh:
+10. 		t.Fatalf("Run finished unexpectedly with error: %v", err)
+11. 	case <-time.After(3 * time.Second):
+12. 		t.Logf("Morph %q hasn't crashed for 3s. Calling success.", morph)
+13. }
 ```
 
 `ClosureError`，误报，需要将gostmt后的类型限制在匿名函数中:
@@ -207,7 +215,7 @@ type Runner struct {
 
 依旧是`HangingGoroutine`类型的较多：
 
-存在误报，虽然符合规则，但是已经做了避免措施(发现学姐之前也扫出了这个。。)：
+存在误报，虽然符合规则，但是已经做了避免措施(发现学姐之前也扫出了这个。)：
 
 ![image-20230320204852760](img/image-20230320204852760.png)
 
